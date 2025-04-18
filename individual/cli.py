@@ -33,10 +33,11 @@ def main():
     arguments = get_parsed_arguments()
     animal_match = find_animals_by_letter(animal_names, arguments.letter)
     if animal_match:
-        print(f"Animals that start with the letter {arguments.letter} are: {animal_match}")
+        print(f"Animals that start with the letter {arguments.letter.upper()} are:")
+        for animal in animal_match:
+            print(f"- {animal}")
     else:
         print(f"No animals found with {arguments.letter}")
-
 
 if __name__ == '__main__':
     main()
