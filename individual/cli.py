@@ -11,10 +11,11 @@ import argparse
 import csv
 
 animal_names = []
-with open('/Users/bwalyamwila/cs257-1/data/data.csv') as f:
-    reader = csv.DictReader(f)
+with open('../data/data.csv') as f:
+    reader = csv.reader(f)
     for row in reader:
-        animal_names.append(row['Name'])
+        if row:
+            animal_names.append(row[0])
 
 def get_parsed_arguments():
     parser = argparse.ArgumentParser(description='Give all animals available with a given first letter.')
