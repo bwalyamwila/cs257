@@ -30,7 +30,7 @@ def get_help():
     return flask.render_template('help.html')
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser('A sample Flask application/API')
+    parser = argparse.ArgumentParser('An animal list Flask Application/API')
     parser.add_argument('host', help='the host on which this application is running')
     parser.add_argument('port', type=int, help='the port on which this application is listening')
     arguments = parser.parse_args()
