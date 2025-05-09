@@ -29,44 +29,67 @@ RESPONSE:
         Not evaluated (NE), Critically endangered (CR), Data deficient (DD).
         Users must use the abbreviations for when checking the endpoint for each of the statuses
 
-        Example status names:
-            LC, EN, VU, NT, NE, CR, DD
+        Example:
+
+            /animals/status/LC
+                 
+        Returns a list of all the animals that are Least concern (LC)
 
 REQUEST: /animals/continents/{continent}
 RESPONSE:
         Returns a list of all continent specified. The continent name is not case sensitive. 
         The continent name must be a valid continent name.
 
-        Example continent names:
-            Africa, Antarctica, Asia, Europe, North America, South America, Australia
+        Example: 
+        
+            /animals/continents/Africa
+        
+        Returns a list of all the animals that are found in Africa
 
 REQUEST: /animals/countries/{country}
 RESPONSE:
         Returns a list of all the animals that are found in the country specified.
         The country name is not case sensitive. The country name must be a valid country name.
-        Example country names:
-            Zambia, Zimbabwe, South Africa, Botswana, Namibia, Tanzania, Kenya
+        Example: 
+        
+            /animals/countries/Zambia
+            
+        Returns a list of all the animals that are found in Zambia
 
 REQUEST: /animals/animal_countries/{animals}
 RESPONSE:
         Returns a list of all the countries that the animal is found in.
         The animal name is not case sensitive. The animal name must be a valid animal name.
-        Example animal names:
-            Lion, Elephant, Giraffe, Zebra, Cheetah, Rhino, Hippo
+        Example:
+
+            /animals/animal_countries/Lion
+        
+        Returns a list of all the countries that the animal is found in
 
 REQUEST: /animals/animal_continents/{animals}
 RESPONSE:
         Returns a list of all the continents that the animal is found in.
         The animal name is not case sensitive. The animal name must be a valid animal name.
-        Example animal names:
-            Lion, Elephant, Giraffe, Zebra, Cheetah, Rhino, Hippo
+        Example:
+
+            /animals/animal_continents/Lion
+
+        Returns a list of all the continents that the animal is found in
 
 REQUEST: /animals/trend/{trend}
 RESPONSE:
         Returns a list of all the animals that are in the trend specified.
         The trend name is not case sensitive. The trend name must be a valid trend name.
-        Example trend names:
+        All possible trend names:
             Increasing, Decreasing, Stable, Unknown
+
+        Example:
+        
+            /animals/trend/Increasing
+
+        Returns a list of all the animals that are in the trend Increasing
+
+        
     </pre>
 </body>
 </html>
