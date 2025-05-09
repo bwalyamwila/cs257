@@ -13,18 +13,47 @@ RESPONSE:
 
 REQUEST: /help
 RESPONSE:
-    This message
+    This message.
 
-REQUEST: /animals/prefix
+REQUEST: /animals/species/{prefix}
 RESPONSE:
-        Returns a list containing all the animals that contain the prefix 
+        Returns a list containing all the animals that contain the prefix (first letter) in their species name.
+        The prefix is not case sensitive. The prefix can be a single letter.
+        Example prefixes:
+            a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z
 
-REQUEST: /animals/status
+REQUEST: /animals/status/{status}
 RESPONSE:
         Returns a list of all the animals that fall under one of the seven population status
         reults: Least concern (LC), Endangered (EN), Vulnerable (VU), Near Threatened (NT)
         Not evaluated (NE), Critically endangered (CR), Data deficient (DD).
         Users must use the abbreviations for when checking the endpoint for each of the statuses
+
+        Example status names:
+            LC, EN, VU, NT, NE, CR, DD
+
+REQUEST: /animals/continents/{continent}
+RESPONSE:
+        Returns a list of all continent specified. The continent name is not case sensitive. 
+        The continent name must be a valid continent name.
+
+        Example continent names:
+            Africa, Antarctica, Asia, Europe, North America, South America, Australia
+
+REQUEST: /animals/countries/{country}
+RESPONSE:
+        Returns a list of all the animals that are found in the country specified.
+        The country name is not case sensitive. The country name must be a valid country name.
+        Example country names:
+            Zambia, Zimbabwe, South Africa, Botswana, Namibia, Tanzania, Kenya
+
+REQUEST: /animals/animal_countries/{animals}
+RESPONSE:
+        Returns a list of all the countries that the animal is found in.
+        The animal name is not case sensitive. The animal name must be a valid animal name.
+        Example animal names:
+            Lion, Elephant, Giraffe, Zebra, Cheetah, Rhino, Hippo
+
     </pre>
 </body>
 </html>
