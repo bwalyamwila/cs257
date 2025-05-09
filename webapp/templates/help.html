@@ -54,6 +54,19 @@ RESPONSE:
         Example animal names:
             Lion, Elephant, Giraffe, Zebra, Cheetah, Rhino, Hippo
 
+REQUEST: /animals/animal_continents/{animals}
+RESPONSE:
+        Returns a list of all the continents that the animal is found in.
+        The animal name is not case sensitive. The animal name must be a valid animal name.
+        Example animal names:
+            Lion, Elephant, Giraffe, Zebra, Cheetah, Rhino, Hippo
+
+REQUEST: /animals/trend/{trend}
+RESPONSE:
+        Returns a list of all the animals that are in the trend specified.
+        The trend name is not case sensitive. The trend name must be a valid trend name.
+        Example trend names:
+            Increasing, Decreasing, Stable, Unknown
     </pre>
 </body>
 </html>
