@@ -168,6 +168,37 @@ def get_trend(trend):
     connection.close()
     return animals
 
+@app.route('/animals/animal_info/<prefix>')
+def getanimal_inf0(prefix):
+    animal_info = []
+    try:
+        query = '''SELECT animals.animal_name, animals.animal_species, 
+                animals.animal_lifespan,populationtTrend.trend, populationStatus.status, 
+                countries.country_name, continents.continent_name
+                FROM animals, animals_concern, animals_continents, animals_countries,
+                countries, continents, populationStatus, populationtTrend
+                WHERE animals.animal_name ILIKE CONCAT( %s, '%%')
+                AND animals.id = animals_concern.animal_id
+                AND populationStatus.id = animals_concern.status_id
+                AND populationttrend.id = animals_concern.trend_id 
+                AND animals.id = animals_countries.animal_id
+                AND countries.id = animals_countries.country_id
+                AND animals.id = animals_continents.animal_id
+                AND continents.id = animals_continents.continent_id;'''
+        connection = get_connection()
+        cursor = connection.cursor()
+        cursor.execute(query, (prefix,))
+        for row in cursor: 
+            animal_info.append({'animal name: ':row[0], 'animal species: ':row[1], 
+            'animal lifespan: ':row[2], 'animal trend: ':row[3], 'animal status: ':row[4], 
+            'animal countries: ':row[5], 'animal continents: ':row[6]})
+           
+    except Exception as e:
+        print(e, file=sys.stderr)
+
+    connection.close()
+    return animal_info
+
 @app.route('/help')
 def get_help():
     return flask.render_template('help.html')
