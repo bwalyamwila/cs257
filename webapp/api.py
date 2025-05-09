@@ -148,7 +148,7 @@ def get_animalscontinent(animal):
     return animals
 
 @app.route('/animals/trend/<trend>')
-def get_status(trend):
+def get_trend(trend):
     animals = []
     try:
         query = '''SELECT animals.animal_name FROM animals, populationttrend, animals_concern
