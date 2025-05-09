@@ -126,6 +126,47 @@ def get_animalscountry(animal):
     connection.close()
     return animals
 
+@app.route('/animals/animal_continents/<animal>')
+def get_animalscontinent(animal):
+    animals = []
+    try:
+        query  = '''SELECT continents.continent_name, animals.animal_name 
+                    FROM animals , animals_continents , continents 
+                    WHERE animals.animal_name ILIKE CONCAT (%s, '%%') 
+                    AND continents.id = animals_cotinents.continent_id 
+                    AND animals.id = animals_continents.animal_id;'''
+        connection = get_connection()
+        cursor = connection.cursor()
+        cursor.execute(query, (animal,))
+        for row in cursor: 
+            animals.append({'animal name: ':row[1], 'countries: ':row[0]})
+           
+    except Exception as e:
+        print(e, file=sys.stderr)
+
+    connection.close()
+    return animals
+
+@app.route('/animals/trend/<trend>')
+def get_status(trend):
+    animals = []
+    try:
+        query = '''SELECT animals.animal_name FROM animals, populationttrend, animals_concern
+                WHERE animals.id = animals_concern.animal_id
+                AND populationttrend.trend ILIKE CONCAT('%%', %s, '%%')
+                AND animals_concern.trend_id = populationttrend.id;'''
+        
+        connection = get_connection()
+        cursor = connection.cursor()
+        cursor.execute(query, (trend,))
+        for row in cursor: 
+            animals.append({'animal name: ':row[0]})
+           
+    except Exception as e:
+        print(e, file=sys.stderr)
+
+    connection.close()
+    return animals
 
 @app.route('/help')
 def get_help():
