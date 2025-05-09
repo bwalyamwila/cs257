@@ -89,6 +89,17 @@ RESPONSE:
 
         Returns a list of all the animals that are in the trend Increasing
 
+REQUEST: /animals/animal_info/{prefix}
+RESPONSE:
+        Returns all the information about the animal that contains the prefix (first letter) in their species name.
+        The prefix is not case sensitive. The prefix can be a single letter.
+
+        Example prefixes:
+
+            a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z
+        
+        Returns all the information about the animal that contains the prefix a in their species name
+
         
     </pre>
 </body>
