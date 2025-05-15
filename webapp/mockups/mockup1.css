@@ -4,11 +4,29 @@
    The CSS for mockup1.html
 */
 
-.continent-list {
+.header-bar{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-icons, .search-box {
+    display: flex;
+    gap: 10px;
+}
+
+.main-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 20px; 
+}
+
+.continent-list, .info-box {
   border: 2px solid black;
   padding: 15px;
   width: 200px; /* optional: to control width */
   background-color: #f8f8f8; /* optional: background color */
   border-radius: 10px; /* optional: rounded corners */
 }
-
