@@ -1,0 +1,14 @@
+/*
+   mockups1.css
+   15 May 2025
+   The CSS for mockup1.html
+*/
+
+.continent-list {
+  border: 2px solid black;
+  padding: 15px;
+  width: 200px; /* optional: to control width */
+  background-color: #f8f8f8; /* optional: background color */
+  border-radius: 10px; /* optional: rounded corners */
+}
+
