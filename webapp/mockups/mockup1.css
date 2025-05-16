@@ -4,9 +4,11 @@
    The CSS for mockup1.html
 */
 
+
 .header-bar{
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     gap: 20px;
 }
 
@@ -26,7 +28,8 @@
 .continent-list, .info-box {
   border: 2px solid black;
   padding: 15px;
-  width: 200px; /* optional: to control width */
-  background-color: #f8f8f8; /* optional: background color */
-  border-radius: 10px; /* optional: rounded corners */
+  width: 200px;
+  background-color: #f8f8f8; 
+  border-radius: 10px; 
+  text-align: center;
 }
