@@ -7,21 +7,21 @@
 
 </head>
 
-<body>
+<body style="background-color: #4d874d;">
     <header>
-        <h1>Wild Thangs</h1>
-
-        <div class ="header-bar">
-            <div class="nav-icons">
-                <button title="Back">Back</button>
-                <button title="Home">Home</button>
+        <div class="header-bar">
+            <h1 class="title">Wild Thangs</h1>
+            <div class="nav-bar">
+                <div class="nav-icons">
+                    <button title="Back">Back</button>
+                    <button title="Home">🏠</button>
+                </div>
+                <div class="search-box">
+                    <input type="text" placeholder="Type country or animal to search" />
+                    <button title="Search">🔍</button>
+                </div>
             </div>
-
-            <div class="search-box">
-                <input type="text" placeholder="Type country or animal to search" />
-                <button title="Search">🔍</button>
-            </div>
-        </div>    
+        </div>
     </header>
 
     <div class="main-container">
@@ -38,17 +38,21 @@
             </ul>
         </div>
 
-        <div class="info-box">
-            <p>This is Box 1</p>
+        <div class="info-box-with-photo">
+            <img src="ImageFolder/Lion.webp" alt="Lion" style="width:100%; border-radius: 10px;">
+            <h3>African Lion</h3>
+            <p>Known as the king of the jungle, lions are found in the savannas of Africa.</p>
         </div>
 
-        <div class="info-box">
-            <p>This is Box 2</p>
-        </div>
 
-        <div class="info-box">
-            <p>This is Box 3</p>
-        </div>    
+        <div class="info-box-group">
+            <div class="info-box">
+                <p>This is Box 2</p>
+            </div>  
+            <div class="info-box">
+                <p>This is Box 3</p>
+            </div>
+        </div>
     </div>
 
 
@@ -56,3 +60,4 @@
 
 
 </body>
+</html>
