@@ -1,0 +1,80 @@
+/*
+   mockups1.css
+   15 May 2025
+   The CSS for mockup1.html
+*/
+
+html, body {
+    background: url('ImageFolder/Jungle-Backgroynd.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 100%
+}
+
+.header-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+}
+
+.nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.nav-icons, .search-box {
+    display: flex;
+    gap: 10px;
+}
+
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 8px;
+    gap: 12px; 
+}
+
+.info-box-with-photo{
+    border: 2px solid rgb(128, 94, 7);
+    padding: 8px;
+    width: 350px;
+    height: 375px;
+    background-color: #ecdcad; 
+    border-radius: 8px; 
+    text-align: center ;
+}
+
+.title{
+    font-size: 50px;
+    margin-bottom: 8px;
+    font-style: bold;
+    font-family: 'papyrus', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+.info-box-group {
+    display: flex;
+    flex-direction: column;
+    /*gap: 20px;*/
+}
+
+.info-box{
+    border: 2px solid black;
+    padding: 10px;
+    width: 450px;
+    height: 275px;
+    background-color: #f8f8f8; 
+    border-radius: 10px; 
+    text-align: center;
+}
+
+button {
+    padding: 8px 14px;
+    border-radius: 5px;
+    font-weight: bold;
+}
