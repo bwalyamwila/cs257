@@ -1,7 +1,7 @@
 /*
    mockups1.css
    15 May 2025
-   The CSS for mockup1.html
+   The CSS for mockup5.html
 */
 
 html, body {
@@ -73,7 +73,7 @@ html, body {
     font-size: 50px;
     margin-bottom: 8px;
     font-style: bold;
-    font-family: 'papyrus', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic, sans-serif;
     text-align: center;
 }
 
