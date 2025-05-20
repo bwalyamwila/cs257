@@ -3,6 +3,8 @@ import flask
 import json
 import csv
 
+## the Fask blueprint containing routes that serve the API endpoints
+
 import psycopg2
 import sys
 
