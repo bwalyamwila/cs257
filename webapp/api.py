@@ -22,6 +22,24 @@ def get_connection():
         print(e, file=sys.stderr)
         exit()
 
+@app.route('/animals')
+def get_animals():
+    animals = []
+    try:
+        query = '''SELECT * FROM animals;'''
+        connection = get_connection()
+        cursor = connection.cursor()
+        cursor.execute(query)
+        for row in cursor: 
+            animals.append({'animal name: ':row[1], 'animal species: ':row[2], 
+            'animal lifespan: ':row[3]})
+           
+    except Exception as e:
+        print(e, file=sys.stderr)
+
+    connection.close()
+    return json.dumps(animals)
+
 @app.route('/')
 def hello():
     return 'Hi there curious animal lover.'
