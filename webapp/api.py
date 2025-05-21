@@ -10,7 +10,7 @@ import sys
 
 import config
 
-app = flask.Flask(__name__)
+api = flask.Blueprint('api', __name__)
 
 def get_connection():
     try:
@@ -22,7 +22,7 @@ def get_connection():
         print(e, file=sys.stderr)
         exit()
 
-@app.route('/animals')
+@api.route('/animals')
 def get_animals():
     animals = []
     try:
@@ -31,8 +31,8 @@ def get_animals():
         cursor = connection.cursor()
         cursor.execute(query)
         for row in cursor: 
-            animals.append({'animal name: ':row[1], 'animal species: ':row[2], 
-            'animal lifespan: ':row[3]})
+            animals.append({'animal id':row[0], 'animal name':row[1], 'animal species':row[2], 
+            'animal lifespan':row[3]})
            
     except Exception as e:
         print(e, file=sys.stderr)
@@ -40,11 +40,11 @@ def get_animals():
     connection.close()
     return json.dumps(animals)
 
-@app.route('/')
+@api.route('/')
 def hello():
     return 'Hi there curious animal lover.'
 
-@app.route('/animals/status/<status>')
+@api.route('/animals/status/<status>')
 def get_status(status):
     animals = []
     try:
@@ -64,7 +64,7 @@ def get_status(status):
     connection.close()
     return animals
 
-@app.route('/animals/species/<first_letter>')
+@api.route('/animals/species/<first_letter>')
 def get_species(first_letter):
     animals = []
     try:
@@ -83,7 +83,7 @@ def get_species(first_letter):
     connection.close()
     return animals
 
-@app.route('/animals/continents/<continent>')
+@api.route('/animals/continents/<continent>')
 def get_continent(continent):
     animals = []
     try:
@@ -104,7 +104,7 @@ def get_continent(continent):
     connection.close()
     return animals
 
-@app.route('/animals/countries/<country>')
+@api.route('/animals/countries/<country>')
 def get_country(country):
     animals = []
     try:
@@ -125,7 +125,7 @@ def get_country(country):
     connection.close()
     return animals
 
-@app.route('/animals/animal_countries/<animal>')
+@api.route('/animals/animal_countries/<animal>')
 def get_animalscountry(animal):
     animals = []
     try:
@@ -146,7 +146,7 @@ def get_animalscountry(animal):
     connection.close()
     return animals
 
-@app.route('/animals/animal_continents/<animal>')
+@api.route('/animals/animal_continents/<animal>')
 def get_animalscontinent(animal):
     animals = []
     try:
@@ -167,7 +167,7 @@ def get_animalscontinent(animal):
     connection.close()
     return animals
 
-@app.route('/animals/trend/<trend>')
+@api.route('/animals/trend/<trend>')
 def get_trend(trend):
     animals = []
     try:
@@ -188,7 +188,7 @@ def get_trend(trend):
     connection.close()
     return animals
 
-@app.route('/animals/animal_info/<prefix>')
+@api.route('/animals/animal_info/<prefix>')
 def getanimal_inf0(prefix):
     animal_info = []
     try:
@@ -219,7 +219,7 @@ def getanimal_inf0(prefix):
     connection.close()
     return animal_info
 
-@app.route('/help')
+@api.route('/help')
 def get_help():
     return flask.render_template('help.html')
 

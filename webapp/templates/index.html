@@ -1,16 +1,21 @@
-<!--This is the place where we will store a simple list of links to the mockups.-->
-
-<!-- Home Page Link : file:///C:/Users/heyok/cs257/BwalyaRepo/webapp/mockups/mockup1.html -->
-<!-- Mockup 2 Link : file:///C:/Users/heyok/cs257/BwalyaRepo/webapp/mockups/mockup2.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>HTML/CSS samples</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}" />
+    <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}" ></script>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+    <title>CS 257: Software Design</title>
 </head>
 
 <body>
-    <p>This page links to all the mockups we created. ☺️</p>
+    <h1> Animal Information Details</h1>
+
+    <p><button id="databutton">Get Animal Info</button></p>
+    <p><table id="results_table"></table></p>
+    <div id="animals"></div>
+
+        <p>This page links to all the mockups we created. ☺️</p>
     <ul>
         <li><a href="mockup1.html">mockup1.html</a></li>
         <li><a href="mockup2.html">mockup2.html</a></li>
