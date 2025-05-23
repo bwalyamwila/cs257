@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Wild Thangs</title>
-    <link rel="stylesheet" type="text/css" href="mockup1.css" />
-    <script type="text/javascript" src="{{ url_for('static', filename='books.js') }}" ></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='mockup1.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='mockup1.js') }}" ></script>
 
 
 </head>
@@ -46,7 +46,7 @@
         </div>
 
         <div class="info-box-with-photo">
-            <img src="ImageFolder/Lion.webp" alt="Lion" style="width:100%; border-radius: 10px;">
+            <img src="/static/ImageFolder/Lion.webp" alt="Lion" style="width:100%; border-radius: 10px;">
             <h3 style="text-decoration: underline;">African Lion</h3>
             <p>Known as the king of the jungle, lions are found in the savannas of Africa.</p>
         </div>

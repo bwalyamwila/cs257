@@ -217,11 +217,13 @@ def getanimal_inf0(prefix):
         print(e, file=sys.stderr)
 
     connection.close()
-    return animal_info
+    return json.dumps(animal_info)
 
 @api.route('/help')
 def get_help():
     return flask.render_template('help.html')
+
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser('An animal list Flask Application/API')
