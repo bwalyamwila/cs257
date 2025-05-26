@@ -52,7 +52,7 @@ function onDataButtonClick() {
     });
 }
 
-// Add this function for animal search
+
 function onAnimalSearch() {
     var searchInput = document.getElementById('animal_search_text');
     var query = '';
@@ -67,8 +67,10 @@ function onAnimalSearch() {
             var listBody = '';
             for (var k = 0; k < animalList.length; k++) {
                 var animal = animalList[k];
+                var animalId = animal['animal id']; 
+                var animalName = animal['animal name: '] || '';
                 listBody += '<li>';
-                listBody += '<strong>Name:</strong> ' + (animal['animal name: '] || '') + '<br>';
+                listBody += '<strong>Name:</strong> <a href="/animal/' + animalId + '">' + animalName + '</a><br>';
                 listBody += '<strong>Species:</strong> ' + (animal['animal species: '] || '') + '<br>';
                 listBody += '<strong>Lifespan:</strong> ' + (animal['animal lifespan: '] || '') + '<br>';
                 listBody += '<strong>Trend:</strong> ' + (animal['animal trend: '] || '') + '<br>';

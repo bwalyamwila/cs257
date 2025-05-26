@@ -209,9 +209,9 @@ def getanimal_inf0(prefix):
         cursor = connection.cursor()
         cursor.execute(query, (prefix,))
         for row in cursor: 
-            animal_info.append({'animal name: ':row[0], 'animal species: ':row[1], 
-            'animal lifespan: ':row[2], 'animal trend: ':row[3], 'animal status: ':row[4], 
-            'animal countries: ':row[5], 'animal continents: ':row[6]})
+            animal_info.append({'animal id': row[0],'animal name: ':row[1], 'animal species: ':row[2], 
+            'animal lifespan: ':row[3], 'animal trend: ':row[4], 'animal status: ':row[5], 
+            'animal countries: ':row[6], 'animal continents: ':row[7]})
            
     except Exception as e:
         print(e, file=sys.stderr)
