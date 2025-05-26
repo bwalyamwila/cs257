@@ -192,7 +192,7 @@ def get_trend(trend):
 def getanimal_inf0(prefix):
     animal_info = []
     try:
-        query = '''SELECT animals.animal_name, animals.animal_species, 
+        query = '''SELECT animals.id, animals.animal_name, animals.animal_species, 
                 animals.animal_lifespan,populationtTrend.trend, populationStatus.status, 
                 countries.country_name, continents.continent_name
                 FROM animals, animals_concern, animals_continents, animals_countries,
