@@ -5,7 +5,7 @@
 */
 
 html, body {
-    background: url('ImageFolder/Jungle-Backgroynd.jpg') no-repeat center center;
+    background: url('ImageFolder/Jungle-Backgroynd.jpg');
     background-size: cover;
     height: 100%;
     margin: 0;
