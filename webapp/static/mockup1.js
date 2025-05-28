@@ -19,33 +19,7 @@ function getAPIBaseURL() {
     var baseURL = window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/api';
     return baseURL;
 }   
-function onCountryButtonClick() {
-    var url = getAPIBaseURL() + '/countries'
 
-        fetch(url, {method: 'get'})
-
-        .then((response) => response.json())
-        .then(function(countriesList) {
-                var tableBody = '';
-                for (var k = 0; k < countriesList.length; k++) {
-                tableBody += '<tr>';
-
-                tableBody += '<td>'+ countriesList[k]+ '</td>';
-
-                tableBody += '</tr>';
-                }
-
-                // Put the table body we just built inside the table that's already on the page.
-                var resultsTableElement = document.getElementById('results_table2');
-                if (resultsTableElement) {
-                resultsTableElement.innerHTML = tableBody;
-                }
-    })
-    .catch(function(error) {
-        console.log(error);
-    });
-}
-                 
 function onDataButtonClick() {
         var url = getAPIBaseURL() + '/animals'
 
@@ -90,24 +64,29 @@ function onAnimalSearch() {
     fetch(url, {method: 'get'})
         .then((response) => response.json())
         .then(function(animalList) {
-            var listBody = '';
+            var resultsHTML = '';
             for (var k = 0; k < animalList.length; k++) {
                 var animal = animalList[k];
-                var animalId = animal['animal id']; 
-                var animalName = animal['animal name: '] || '';
-                listBody += '<li>';
-                listBody += '<strong>Name:</strong> <a href="/animal/' + animalId + '">' + animalName + '</a><br>';
-                listBody += '<strong>Species:</strong> ' + (animal['animal species: '] || '') + '<br>';
-                listBody += '<strong>Lifespan:</strong> ' + (animal['animal lifespan: '] || '') + '<br>';
-                listBody += '<strong>Trend:</strong> ' + (animal['animal trend: '] || '') + '<br>';
-                listBody += '<strong>Status:</strong> ' + (animal['animal status: '] || '') + '<br>';
-                listBody += '<strong>Countries:</strong> ' + (animal['animal countries: '] || '') + '<br>';
-                listBody += '<strong>Continents:</strong> ' + (animal['animal continents: '] || '');
-                listBody += '</li>';
+                // did use chatgpt to help with this a bit 
+                resultsHTML += `
+                    <div class="info-box-with-photo" style="margin-bottom:20px;">
+                        <h3 style="text-decoration: underline;">
+                            <a href="/animal/${animal['animal id'] || ''}">
+                                ${animal['animal name: '] || ''}
+                            </a>
+                        </h3>
+                        <p><strong>Species:</strong> ${animal['animal species: '] || ''}</p>
+                        <p><strong>Lifespan:</strong> ${animal['animal lifespan: '] || ''}</p>
+                        <p><strong>Trend:</strong> ${animal['animal trend: '] || ''}</p>
+                        <p><strong>Status:</strong> ${animal['animal status: '] || ''}</p>
+                        <p><strong>Countries:</strong> ${animal['animal countries: '] || ''}</p>
+                        <p><strong>Continents:</strong> ${animal['animal continents: '] || ''}</p>
+                    </div>
+                `;
             }
             var resultsElement = document.getElementById('animal_search_results');
             if (resultsElement) {
-                resultsElement.innerHTML = listBody;
+                resultsElement.innerHTML = resultsHTML;
             }
         })
         .catch(function(error) {

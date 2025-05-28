@@ -211,7 +211,7 @@ def get_trend(trend):
 def getanimal_inf0(prefix):
     animal_info = []
     try:
-        query = '''SELECT animals.animal_name, animals.animal_species, 
+        query = '''SELECT animals.id, animals.animal_name, animals.animal_species, 
                 animals.animal_lifespan,populationtTrend.trend, populationStatus.status, 
                 countries.country_name, continents.continent_name
                 FROM animals, animals_concern, animals_continents, animals_countries,
@@ -228,19 +228,21 @@ def getanimal_inf0(prefix):
         cursor = connection.cursor()
         cursor.execute(query, (prefix,))
         for row in cursor: 
-            animal_info.append({'animal name: ':row[0], 'animal species: ':row[1], 
-            'animal lifespan: ':row[2], 'animal trend: ':row[3], 'animal status: ':row[4], 
-            'animal countries: ':row[5], 'animal continents: ':row[6]})
+            animal_info.append({'animal id': row[0],'animal name: ':row[1], 'animal species: ':row[2], 
+            'animal lifespan: ':row[3], 'animal trend: ':row[4], 'animal status: ':row[5], 
+            'animal countries: ':row[6], 'animal continents: ':row[7]})
            
     except Exception as e:
         print(e, file=sys.stderr)
 
     connection.close()
-    return animal_info
+    return json.dumps(animal_info)
 
 @api.route('/help')
 def get_help():
     return flask.render_template('help.html')
+
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser('An animal list Flask Application/API')

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Wild Thangs</title>
-    <link rel="stylesheet" type="text/css" href="mockup1.css" />
-    <script type="text/javascript" src="{{ url_for('static', filename='books.js') }}" ></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='mockup1.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='mockup1.js') }}" ></script>
 
 
 </head>
@@ -19,8 +19,13 @@
                     <button title="Home">🏠</button>
                 </div>
                 <div class="search-box">
-                    <input type="text" placeholder="Type country or animal to search" />
-                    <button title="Search">🔍</button>
+                    <!-- <input type="text" placeholder="Type country or animal to search" />
+                    <button title="Search">test</button> -->
+
+                    <p>
+                        <input type="text" id="animal_search_text" placeholder="Search animal by name" /> 
+                        <button id="animal_search_button">Search</button>
+                    </p>
                 </div>
             </div>
         </div>
@@ -46,9 +51,15 @@
         </div>
 
         <div class="info-box-with-photo">
-            <img src="ImageFolder/Lion.webp" alt="Lion" style="width:100%; border-radius: 10px;">
+            <img src="/static/ImageFolder/Lion.webp" alt="Lion" style="width:100%; border-radius: 10px;">
             <h3 style="text-decoration: underline;">African Lion</h3>
             <p>Known as the king of the jungle, lions are found in the savannas of Africa.</p>
+        </div>
+
+        <div class="info-box-with-photo2">
+            <img src="/static/ImageFolder/Eurasian_wolf_2.jpg" alt="Lion" style="width:100%; border-radius: 10px;">
+            <h3 style="text-decoration: underline;">Eurasian Wolf</h3>
+            <p>The Eurasian wolf, also known as the common wolf, is a subspecies of grey wolf native to Europe and Asia.</p>
         </div>
 
 
@@ -70,9 +81,7 @@
         </div>
     </div>
 
-
-
-
+    <div id="animal_search_results" class="search-results-container"></div>
 
 </body>
 </html>
