@@ -30,7 +30,7 @@ CREATE TABLE animals_continents (
 	continent_id integer
 );
 
-CREATE TABLE animals_countries (
+CREATE TABLE animal_country (
         animal_id integer,
         country_id integer
 );

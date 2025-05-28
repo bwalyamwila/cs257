@@ -22,6 +22,25 @@ def get_connection():
         print(e, file=sys.stderr)
         exit()
 
+@api.route('/countries')
+def get_unique_country_names():
+    country_names = set()
+    try:
+        query = '''SELECT country_name FROM countries;'''
+        connection = get_connection()
+        cursor = connection.cursor()
+        cursor.execute(query)
+        for row in cursor:
+            names = row[0].split(',')
+            for name in names:
+                country_names.add(name.strip())
+    except Exception as e:
+        print(e, file=sys.stderr)
+    finally:
+        connection.close()
+    return json.dumps(sorted(country_names))
+
+
 @api.route('/animals')
 def get_animals():
     animals = []

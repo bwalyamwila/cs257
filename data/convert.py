@@ -1,4 +1,4 @@
-'''Authors: Anthony , Jacky , Bwalya 
+'''Authors: Anthony, Jacky, Bwalya 
     Date: 2025-28-04'
     Description: l read your dataset's file and write one CSV file for each of the tables in your database design. 
     If you have designed a table named animals, for example, the corresponding CSV file should be named animals.csv,
@@ -14,18 +14,21 @@
     populationStatus.csv
     animals_continents.csv
     animals_countries.csv
+    animals_country.csv
     animals_concern.csv
     '''
-
 
 import csv
 import sys
 
 def main(input_filename):
     animals = [] # List to store animal data
+    country_set = set()
+    country = [] # List of individual countries
+    CountryDict = {} # Dictionary to store unique countries
     AnimalDict= {} # Dictionary to store unique animals (still testing something with table linking)
     PlacesDict={} # Dictionary to store unique continents
-    CountriesDict={} # Dictionary to store unique countries
+    CountriesDict={} # Dictionary to store unique string of countires
     populationTrendDict={} # Dictionary to store unique population trends
     populationStatusDict={} # Dictionary to store unique population status
     LinkTable=[]# List to store linking table data
@@ -42,10 +45,8 @@ def main(input_filename):
             PopulationTrend = csv_row[5] # Population trend
             PopulationStatus = csv_row[6] # Population status
 
-
-            name_key = f'{AnimalName}+{Species}+{LifeSpan}' 
-
-           
+            name_key = f'{AnimalName}+{Species}+{LifeSpan}'
+ 
             if name_key not in AnimalDict: 
                 animal_id = len(animals) +1    
                 AnimalDict[name_key] = animal_id
@@ -53,19 +54,25 @@ def main(input_filename):
             ## Append animal data to the list
             animals.append((animal_id, AnimalName, Species, LifeSpan, continents,  countries, PopulationTrend, PopulationStatus)) # Append animal data to the list
             
-            
             if continents not in PlacesDict: # Check if the continent is unique
                 place_id = len(PlacesDict) + 1 # Unique ID for the continent
                 PlacesDict[continents] = place_id # Add continent to the dictionary
 
-            if countries not in CountriesDict: # Check if the country is unique
+            if countries not in CountriesDict: # Check if the string of countries is unique
                 country_id = len(CountriesDict) + 1 # Unique ID for the country
                 CountriesDict[countries] = country_id # Add country to the dictionary
-
+    
+            #Adds individual countries to the country list
+            cleaned_countries = countries.strip()
+            countries_list = cleaned_countries.split(',')
+            for c in countries_list:
+                if c and c not in country:
+                    country_set.add(c.strip())
+        
             if PopulationTrend not in populationTrendDict: # Check if the population trend is unique
                 population_id = len(populationTrendDict) + 1 # Unique ID for the population trend
                 populationTrendDict[PopulationTrend] = population_id # Add population trend to the dictionary
-
+        
             if PopulationStatus not in populationStatusDict: # Check if the population status is unique
                 population_id = len(populationStatusDict) + 1 # Unique ID for the population status
                 populationStatusDict[PopulationStatus] = population_id # Add population status to the dictionary
@@ -73,8 +80,30 @@ def main(input_filename):
             # Append the animal ID and place ID to the linking table
             LinkTable.append((AnimalDict[name_key], PlacesDict[continents], CountriesDict[countries], populationTrendDict[PopulationTrend], populationStatusDict[PopulationStatus])) # Append the animal ID and place ID to the linking table
 
+    for index, country in enumerate(sorted(country_set), start=1):
+        CountryDict[country.strip()] = index
     
+    # Creates an csv file connects an animal to a country
+    with open(input_filename, 'r') as f2, open('animal_country.csv', 'w', newline='') as f3:
+        reader = csv.reader(f2)
+        writer = csv.writer(f3)
+        for row in reader:
+            animal_name = row[0]
+            animal_species = row[1]
+            animal_lifespan = row[2]
+            animal_name_key = f'{animal_name}+{animal_species}+{animal_lifespan}'
+            animal_id = AnimalDict[animal_name_key]
 
+            countries_list = row[4].split(',')
+            
+            for country in countries_list:
+                if country:
+                    country_id = CountryDict[country.strip()]
+                    #print(f'CountryID: {CountryDict[country.strip()]}, AnimalID: {animal_id}')
+                    print(f'Writing row: {[animal_id, country_id]}')
+                    writer.writerow([animal_id, country_id])
+
+     
     with open('animals.csv', 'w', newline='') as f:
         writer = csv.writer(f)
         for animal in animals:
@@ -88,9 +117,14 @@ def main(input_filename):
             
     with open ('countries.csv', 'w') as f:
         writer = csv.writer(f)
-        for country, country_id in CountriesDict.items():
-            writer.writerow([country_id, country]) # Write country data to CSV file
-        
+        for countries, countries_id in CountriesDict.items():
+            writer.writerow([countries_id, countries]) # Writes list of countries to CSV file
+    
+    with open ('country.csv', 'w') as f:
+        writer = csv.writer(f)
+        for country, country_id in CountryDict.items():
+            writer.writerow([country_id, country]) # Writes unique countries to the csv file   
+
     with open ('populationtTrend.csv', 'w', newline='') as f:
         writer = csv.writer(f)
         for trend, trend_id in populationTrendDict.items():
@@ -99,8 +133,7 @@ def main(input_filename):
     with open ('populationStatus.csv', 'w') as f:
         writer = csv.writer(f)
         for status, status_id in populationStatusDict.items():
-            writer.writerow([status_id, status]) # Write population status data to CSV file
-            
+            writer.writerow([status_id, status]) # Write population status data to CSV file    
   
     with open('animals_continents.csv', 'w', newline='') as f:
         writer = csv.writer(f)
@@ -110,7 +143,7 @@ def main(input_filename):
     with open ('animals_countries.csv', 'w') as f: 
         writer = csv.writer(f)
         for link in LinkTable:
-            writer.writerow([link[0], link[2]])      # Write animal ID and country ID to CSV file 
+            writer.writerow([link[0], link[2]]) 
 
     with open ('animals_concern.csv', 'w') as f:
         writer = csv.writer(f)
