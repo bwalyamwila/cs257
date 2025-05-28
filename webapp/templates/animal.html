@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Wild Thangs</title>
-    <link rel="stylesheet" type="text/css" href="mockup1.css" />
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='mockup1.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='animal.js') }}"></script>
 </head>
 
 <body>
@@ -24,20 +24,7 @@
         </div>
     </header>
     
-    <section class="intro">
-        <h2>Species: Panthera</h2>
-        <p>All the animals of the Panthera species.</p>  
-    </section>
-
-    <div class="main-container">
-        <div class="continent-list">
-            <h2 style="text-decoration: underline;">Panthera</h2>
-            <ul>
-                <li><href=>Tiger (Panthera Tigris)</a></li>
-                <li><href=>Lion (Panthera Leo)</a></li>
-                <li><href=>Jaguar (Panthera Onca)</a></li>
-                <li><href=>Leopard (Panthera Pardus)</a></li>
-            </ul>
-        </div>
+    <h1>Animal: {{ animal_name }}</h1>
+    <div id="animal-details"></div>
 </body>
 </html>

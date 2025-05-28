@@ -15,6 +15,10 @@ def home():
 def home_page():
     return flask.render_template('mockup1.html')
 
+@app.route('/animal/<animal_name>')
+def animal_page(animal_name):
+    return flask.render_template('animal.html', animal_name=animal_name)
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser('An animal application, including API & DB')
     parser.add_argument('host', help='the host to run on')
