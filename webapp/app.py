@@ -15,6 +15,10 @@ def home():
 def home_page():
     return flask.render_template('mockup1.html')
 
+@app.route('/animal/<animal_name>')
+def animal_page(animal_name):
+    return flask.render_template('animal.html', animal_name=animal_name)
+
 @app.route('/map')
 def map_page():
     return flask.render_template('map-sample-world.html')

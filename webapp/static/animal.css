@@ -1,7 +1,7 @@
 /*
    mockups1.css
    15 May 2025
-   The CSS for mockup7.html
+   The CSS for mockup6.html
 */
 
 html, body {
@@ -49,7 +49,7 @@ html, body {
     gap: 20px; 
 }
 
-.continent-list, .info-box-with-photo{
+.animal-list, .info-box-with-photo{
     border: 2px solid black;
     padding: 15px;
     width: 200px;
@@ -59,12 +59,12 @@ html, body {
     margin-right: 40px;
 }
 
-.continent-list ul, .info-box ul{
+.animal-list ul, .info-box ul{
     list-style: none;   
     padding-left: 0;   
 }
 
-.continent-list ul li{
+.animal-list ul li{
     padding-bottom: 20px;
 }
 
@@ -85,7 +85,7 @@ html, body {
     border: 2px solid black;
     padding: 15px;
     width: 200px;
-    height: 150px;
+    height: 250px;
     background-color: 	#fef4c0;
     border-radius: 10px; 
     text-align: center;
@@ -100,6 +100,6 @@ button {
 }
 
 h1,h2,h3,li {
-    color: #264d35;
+    color: #204d31;
 }
 

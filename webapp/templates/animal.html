@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wild Thangs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='animal.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='animal.js') }}"></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-bar">
+            <h1 class="title"><a href="/home" style="text-decoration: none; color: inherit;">Wild Thangs</a></h1>
+            <div class="nav-bar">
+                <div class="nav-icons">
+                    <button title="Back">Back</button>
+                    <button title="Home"><a href="/home" style="text-decoration: none; color: inherit;">🏠</a></button>
+                </div>
+                <div class="search-box">
+                    <p>
+                        <input type="text" id="animal_search_text" placeholder="Search animal by name" /> 
+                        <button id="animal_search_button">Search</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <h1>Animal Search </h1>
+    
+    <div id="animal-details"></div>
+</body>
+</html>

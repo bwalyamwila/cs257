@@ -57,40 +57,11 @@ function onAnimalSearch() {
     var searchInput = document.getElementById('animal_search_text');
     var query = '';
     if (searchInput) {
-        query = searchInput.value;
+        query = searchInput.value.trim();
     }
-    var url = getAPIBaseURL() + '/animals/animal_info/' + encodeURIComponent(query);
-
-    fetch(url, {method: 'get'})
-        .then((response) => response.json())
-        .then(function(animalList) {
-            var resultsHTML = '';
-            for (var k = 0; k < animalList.length; k++) {
-                var animal = animalList[k];
-                // did use chatgpt to help with this a bit 
-                resultsHTML += `
-                    <div class="info-box-with-photo" style="margin-bottom:20px;">
-                        <h3 style="text-decoration: underline;">
-                            <a href="/animal/${animal['animal id'] || ''}">
-                                ${animal['animal name: '] || ''}
-                            </a>
-                        </h3>
-                        <p><strong>Species:</strong> ${animal['animal species: '] || ''}</p>
-                        <p><strong>Lifespan:</strong> ${animal['animal lifespan: '] || ''}</p>
-                        <p><strong>Trend:</strong> ${animal['animal trend: '] || ''}</p>
-                        <p><strong>Status:</strong> ${animal['animal status: '] || ''}</p>
-                        <p><strong>Countries:</strong> ${animal['animal countries: '] || ''}</p>
-                        <p><strong>Continents:</strong> ${animal['animal continents: '] || ''}</p>
-                    </div>
-                `;
-            }
-            var resultsElement = document.getElementById('animal_search_results');
-            if (resultsElement) {
-                resultsElement.innerHTML = resultsHTML;
-            }
-        })
-        .catch(function(error) {
-            console.log(error);
-        });
+    if (query) {
+        // Redirect to a new page for the animal
+        window.location.href = '/animal/' + encodeURIComponent(query);
+    }
 }
 
