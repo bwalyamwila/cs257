@@ -16,11 +16,7 @@ window.addEventListener("load", initialize);
 // specifies the color those countries should be. There's also a default color specified
 // in the Datamap initializer below.
 var extraCountryInfo = {
-    France: {population: 66700000, jeffhasbeenthere: true, fillColor: '#2222aa'},
-    America: {population: 328000000, jeffhasbeenthere: true, fillColor: '#2222aa'},
-    India: {population: 1353000000, jeffhasbeenthere: false, fillColor: '#aa2222'},
-    Japan: {population: 125500000, jeffhasbeenthere: true, fillColor: '#aa2222'},
-    Portugal: {population: 10300000, jeffhasbeenthere: true, fillColor: '#aa2222'},
+
 };
 
 function initialize() {
@@ -42,7 +38,6 @@ function initializeMap() {
                             geographyConfig: {
                                 //popupOnHover: false, // You can disable the hover popup
                                 //highlightOnHover: false, // You can disable the color change on hover
-                                popupTemplate: hoverPopupTemplate, // call this to obtain the HTML for the hover popup
                                 borderColor: '#eeeeee', // state/country border color
                                 highlightFillColor: '#99dd99', // color when you hover on a state/country
                                 highlightBorderColor: '#000000', // border color when you hover on a state/country
@@ -56,28 +51,6 @@ function onMapDone(dataMap) {
     dataMap.svg.selectAll('.datamaps-subunit').on('click', onCountryClick);
 }
 
-function hoverPopupTemplate(geography, data) {
-    var population = 0;
-    if (data && 'population' in data) {
-        population = data.population;
-    }
-
-    var jeffHasLivedThere = 'Maybe. I dunno.';
-    if (data && 'jeffhasbeenthere' in data) {
-        if (data.jeffhasbeenthere) {
-            jeffHasLivedThere = 'Yes';
-        } else {
-            jeffHasLivedThere = 'No';
-        }
-    }
-
-    var template = '<div class="hoverpopup"><strong>' + geography.properties.name + '</strong><br>\n'
-                    + '<strong>Population:</strong> ' + population + '<br>\n'
-                    + '<strong>Has Jeff been there?</strong> ' + jeffHasLivedThere + '<br>\n'
-                    + '</div>';
-
-    return template;
-}
 
 function onCountryClick(geography) {
 //When clicked takes the user to a new page

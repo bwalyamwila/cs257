@@ -219,7 +219,7 @@ def getanimal_inf0(prefix):
                 countries.country_name, continents.continent_name
                 FROM animals, animals_concern, animals_continents, animals_countries,
                 countries, continents, populationStatus, populationtTrend
-                WHERE animals.animal_name ILIKE CONCAT( %s, '%%')
+                WHERE animals.animal_name ILIKE CONCAT( '%%', %s, '%%')
                 AND animals.id = animals_concern.animal_id
                 AND populationStatus.id = animals_concern.status_id
                 AND populationttrend.id = animals_concern.trend_id 
