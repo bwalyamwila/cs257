@@ -22,23 +22,26 @@ def get_connection():
         print(e, file=sys.stderr)
         exit()
 
-@api.route('/countries')
-def get_unique_country_names():
-    country_names = set()
+@api.route('/animal/country/<country_name>')
+def get_animals_country(country_name):
+    animals = []
     try:
-        query = '''SELECT country_name FROM countries;'''
+        query = '''SELECT animals.animal_name 
+                    FROM animals , animal_country , country
+                    WHERE country.country_name ILIKE CONCAT ('%%', %s, '%%') 
+                    AND country.id = animal_country.country_id 
+                    AND animals.id = animal_country.animal_id;'''
         connection = get_connection()
         cursor = connection.cursor()
-        cursor.execute(query)
-        for row in cursor:
-            names = row[0].split(',')
-            for name in names:
-                country_names.add(name.strip())
+        cursor.execute(query, (country_name,))
+        for row in cursor: 
+            animals.append({'animal name':row[0]})
+           
     except Exception as e:
         print(e, file=sys.stderr)
-    finally:
-        connection.close()
-    return json.dumps(sorted(country_names))
+
+    connection.close()
+    return json.dumps(animals)
 
 
 @api.route('/animals')

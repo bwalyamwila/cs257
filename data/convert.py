@@ -99,7 +99,6 @@ def main(input_filename):
             for country in countries_list:
                 if country:
                     country_id = CountryDict[country.strip()]
-                    #print(f'CountryID: {CountryDict[country.strip()]}, AnimalID: {animal_id}')
                     print(f'Writing row: {[animal_id, country_id]}')
                     writer.writerow([animal_id, country_id])
 

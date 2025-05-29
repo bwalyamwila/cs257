@@ -76335,6 +76335,7 @@ COPY public.countries (id, country_name) FROM stdin;
 977	Trinidad and Tobago, Colombia, Venezuela  Neotropical
 978	South Africa, Angola, Botswana, Lesotho, Mozambique, Namibia, Zambia, Zimbabwe
 979	Ethiopia, Kenya, Mali, Nigeria, Sudan
+1	Afghanistan
 980	Spain, Portugal, Algeria,  Libya, Morocco, Tunisia  Gibraltar
 981	Belize, Costa Rica, El Salvador, Guatemala, Honduras, Mexico, Nicaragua
 982	China, Mongolia, Russia, Kazakhstan
@@ -76418,6 +76419,7 @@ COPY public.countries (id, country_name) FROM stdin;
 1060	Trinidad and Tobago, Ecuador, Brazil, Guyana, Peru, Suriname,  Venezuela
 1061	China, Hong Kong
 1062	Trinidad and Tobago, Guatemala,  Ecuador, Bolivia, Brazil, Colombia, Guyana, Peru, Suriname, Venezuela
+2	Afrotropical
 1063	South Africa, Angola, Botswana, DR Congo, Malawi, Mozambique,  Tanzania, Zambia, Zimbabwe
 1064	Malaysia, Thailand
 1065	France, Italy, Malta, Algeria, Libya, Morocco, Tunisia
@@ -76674,6 +76676,8 @@ COPY public.countries (id, country_name) FROM stdin;
 1316	Argentina, Belize, Bolivia, Brazil, Costa Rica, Ecuador, Guatemala, Guyana, Honduras, Mexico,
 1317	China, Hong Kong, Laos,  Macao, Taiwan, Viet Nam
 1318	Albania, Austria, Bosnia and Herzegovina, Bulgaria, Croatia, Czech Republic, Germany, Greece, Hungary, Italy,
+3	Alabama
+4	Albania
 1319	Afghanistan, Armenia, Azerbaijan, Cyprus, India, Iran, Iraq, Jordan, Kazakhstan, Kyrgyzstan,
 1320	India, Bangladesh, Sri Lanka, Myanmar, Thailand, Malaysia,  Laos, Cambodia, Viet Nam, China,
 1321	Andorra, Croatia, France, Italy, Malta, Slovenia, Spain, Switzerland, Greece, Luxembourg
@@ -77226,6 +77230,7 @@ COPY public.countries (id, country_name) FROM stdin;
 1867	Ecuador, Chile, Argentina, Bolivia, Colombia, Peru
 1868	Antigua and Barbuda, Bahamas, Barbados, Cuba,  Dominica, Dominican Republic, Guadeloupe, Jamaica, Saint Kitts and Nevis, Saint Lucia,
 1869	China, Hong Kong, Japan, North Korea, South Korea, Taiwan, Spain, Portugal, France, Albania,
+5	Alberta
 1870	Belize, Brazil, Colombia, Costa Rica, Cuba, El Salvador, Guatemala, Guyana, Honduras, Mexico,
 1871	India, Nepal, Sri Lanka, Afghanistan, Kazakhstan, Kyrgyzstan, Tajikistan, Turkmenistan, Uzbekistan
 1872	China, Hong Kong, North Korea, Macao, Mongolia, Taiwan, France, Finland, Albania, Austria,
@@ -77875,6 +77880,7 @@ COPY public.countries (id, country_name) FROM stdin;
 2516	Belize, Costa Rica, El Salvador, Guatemala, Mexico, Nicaragua, Panama, Canada, United States, Ecuador,
 2517	South Africa, Angola, Botswana, Mozambique, Namibia, Zambia, Zimbabwe
 2518	Benin, Burkina Faso, Cameroon, Cote d'Ivoire, Gambia, Ghana, Guinea, Guinea-Bissau, Mali,  Niger,
+6	Algeria
 2519	Trinidad and Tobago, Mexico, Panama, Ecuador, Bolivia, Brazil, Colombia, Guyana, Peru, Suriname,
 2520	Trinidad and Tobago, Belize, Guatemala, Honduras, Nicaragua, Panama, Ecuador, Argentina, Bolivia, Brazil,
 2521	Trinidad and Tobago, Belize, Costa Rica, Guatemala, Honduras, Mexico, Nicaragua,  Panama, Ecuador, Bolivia,
@@ -77945,6 +77951,7 @@ COPY public.countries (id, country_name) FROM stdin;
 2586	China, Mongolia,  Russia, India, Nepal, Afghanistan, Armenia, Azerbaijan, Iran, Kazakhstan,
 2587	Bahamas
 2588	Mauritius, Madagascar, Malawi, Mozambique, Tanzania
+7	Andorra
 2589	Costa Rica, Nicaragua, Panama,  Ecuador, Bolivia, Brazil, Colombia, Guyana, Paraguay, Peru,
 2590	Trinidad and Tobago, Colombia, Guyana, Suriname, Venezuela  French Guiana
 2591	Barbados
@@ -78394,6 +78401,7 @@ COPY public.countries (id, country_name) FROM stdin;
 3036	Argentina, Brazil, Paraguay,  Uruguay
 3037	Central African Republic, DR Congo, South Sudan, Sudan, Uganda
 3038	Trinidad and Tobago, Costa Rica, Panama, Argentina, Bolivia, Brazil,  Colombia, Guyana, Paraguay, Peru,
+8	Angola
 3039	Ecuador, Argentina, Brazil, Colombia, Paraguay, Peru, Suriname, Venezuela
 3040	Equatorial Guinea, Angola, Benin, Botswana, Cameroon, Central African Republic, Chad, Congo, DR Congo, Ghana,
 3041	Costa Rica, El Salvador, Guatemala, Honduras, Mexico, Nicaragua, Panama,  Ecuador, Colombia, Peru,
@@ -78527,6 +78535,296 @@ COPY public.countries (id, country_name) FROM stdin;
 3169	Kenya, Malawi, Mozambique, Tanzania
 3170	Ecuador, Colombia,  Peru, Venezuela
 3171	Bolivia, Brazil, Paraguay, Peru
+9	Antigua and Barbuda
+10	Argentina
+11	Arizona
+12	Armenia
+13	Australasian
+14	Australia
+15	Australia  Australasian
+16	Austria
+17	Azerbaijan
+18	Bahamas
+19	Bahrain
+20	Bangladesh
+21	Barbados
+22	Belarus
+23	Belarus  Palearctic
+24	Belgium
+25	Belize
+26	Benin
+27	Bhutan
+28	Bolivia
+29	Bolivia  Neotropical
+30	Bosnia and Herzegovina
+31	Botswana
+32	Brazil
+33	Brazil  Neotropical
+34	British Columbia
+35	Brunei
+36	Bulgaria
+37	Burkina Faso
+38	Burundi
+39	California
+40	Cambodia
+41	Cameroon
+42	Canada
+43	Cape Verde
+44	Cayman Islands
+45	Central African Republic
+46	Chad
+47	Chile
+48	Chile  French Polynesia
+49	China
+50	Colombia
+51	Colombia  Neotropical
+52	Comoros
+53	Congo
+54	Costa Rica
+55	Cote d'Ivoire
+56	Croatia
+57	Cuba
+58	Cuba  Neotropical
+59	Cyprus
+60	Czech Republic
+61	DR Congo
+62	Denmark
+63	Djibouti
+64	Dominica
+65	Dominica  Neotropical
+66	Dominican Republic
+67	Dominican Republic  Neotropical
+68	Ecuador
+69	Ecuador   Neotropical
+70	Egypt
+71	El Salvador
+72	Equatorial Guinea
+73	Eritrea
+74	Estonia
+75	Eswatini
+76	Ethiopia
+77	Faroe Islands
+78	Federated States of Micronesia
+79	Fiji
+80	Finland
+81	France
+82	French Guiana
+83	Gabon
+84	Gabon  Afrotropical
+85	Gambia
+86	Georgia
+87	Germany
+88	Ghana
+89	Greece
+90	Grenada
+91	Guadeloupe
+92	Guatemala
+93	Guinea
+94	Guinea-Bissau
+95	Guyana
+96	Haiti
+97	Honduras
+98	Hong Kong
+99	Hungary
+100	Iceland
+101	India
+102	India   Karnataka
+103	India  Indomalayan
+104	Indomalayan
+105	Indonesia
+106	Indonesia  Australasian
+107	Indonesia  Indomalayan
+108	Indonesia  Jawa
+109	Indonesia  Sulawesi
+110	Iran
+111	Iraq
+112	Ireland
+113	Israel
+114	Italy
+115	Jamaica
+116	Japan
+117	Japan  Pacific Ocean
+118	Jordan
+119	Kansas
+120	Karnataka
+121	Kazakhstan
+122	Kenya
+123	Kerala
+124	Kiribati
+125	Kuwait
+126	Kyrgyzstan
+127	Labrador
+128	Laos
+129	Latvia
+130	Lebanon
+131	Lesotho
+132	Liberia
+133	Libya
+134	Liechtenstein
+135	Lithuania
+136	Luxembourg
+137	Macao
+138	Macedonia
+139	Madagascar
+140	Madagascar  Afrotropical
+141	Malawi
+142	Malaysia
+143	Maldives
+144	Mali
+145	Malta
+146	Manitoba
+147	Marshall Islands
+148	Mauritania
+149	Mauritius
+150	Mexico
+151	Mexico  Germany
+152	Mexico  Neotropical
+153	Mexico  Puerto Rico
+154	Moldova
+155	Monaco
+156	Mongolia
+157	Mongolia  Palearctic
+158	Montenegro
+159	Morocco
+160	Morocco  Palearctic
+161	Mozambique
+162	Myanmar
+163	Myanmar  Indomalayan
+164	Namibia
+165	Namibia  Afrotropical
+166	Nauru
+167	Nearctic
+168	Neotropical
+169	Nepal
+170	Netherlands
+171	Nevada
+172	New Brunswick
+173	New Mexico
+174	New Zealand
+175	Newfoundland
+176	Newfoundland I
+177	Nicaragua
+178	Nicaragua   Neotropical
+179	Nicaragua  Neotropical
+180	Niger
+181	Nigeria
+182	Nigeria  Afrotropical
+183	Nigeria  Bioko
+184	North Dakota
+185	North Korea
+186	Northern Mariana Islands
+187	Northwest Territories
+188	Norway
+189	Nova Scotia
+190	Oklahoma
+191	Oman
+192	Ontario
+193	Pakistan
+194	Pakistan  Indomalayan
+195	Palau
+196	Palearctic
+197	Palestine
+198	Panama
+199	Panama  Neotropical
+200	Papua New Guinea
+201	Paraguay
+202	Paraguay  Neotropical
+203	Peru
+204	Peru  Amazonas
+205	Peru  Neotropical
+206	Philippines
+207	Pitcairn
+208	Poland
+209	Portugal
+210	Qatar
+211	Québec
+212	Romania
+213	Russia
+214	Rwanda
+215	Saint Kitts and Nevis
+216	Saint Lucia
+217	Saint Pierre and Miquelon
+218	Saint Vincent and the Grenadines
+219	Samoa
+220	San Marino
+221	Saskatchewan
+222	Saudi Arabia
+223	Senegal
+224	Serbia
+225	Seychelles
+226	Sierra Leone
+227	Sierra Leone  Afrotropical
+228	Singapore
+229	Slovakia
+230	Slovenia
+231	Solomon Islands
+232	Somalia
+233	Somalia  Afrotropical
+234	South Africa
+235	South Dakota
+236	South Korea
+237	South Sudan
+238	Spain
+239	Sri Lanka
+240	Sudan
+241	Suriname
+242	Suriname  United States
+243	Swaziland
+244	Sweden
+245	Switzerland
+246	Syria
+247	Syria  Palearctic
+248	Taiwan
+249	Tajikistan
+250	Tamil Nadu
+251	Tanzania
+252	Texas
+253	Thailand
+254	Timor-Leste
+255	Togo
+256	Tonga
+257	Trinidad and Tobago
+258	Tunisia
+259	Tunisia  Gibraltar
+260	Turkey
+261	Turkey  Palearctic
+262	Turkmenistan
+263	U.S. Minor Outlying Islands
+264	Uganda
+265	Uganda  Afrotropical
+266	Ukraine
+267	United Arab Emirates
+268	United Kingdom
+269	United States
+270	United States   Nearctic
+271	United States  Alberta
+272	United States  Arizona
+273	United States  British Columbia
+274	United States  Nearctic
+275	United States  Nebraska
+276	United States  Neotropical
+277	United States  New Brunswick
+278	United States  Pacific Ocean
+279	Uruguay
+280	Uruguay  Falkland Islands
+281	Uruguay  Neotropical
+282	Utah
+283	Uzbekistan
+284	Vanuatu
+285	Venezuela
+286	Venezuela  Falkland Islands
+287	Venezuela  French Guiana
+288	Venezuela  Neotropical
+289	Viet Nam
+290	Viet Nam  Indomalayan
+291	Viet Nam  Palearctic
+292	Western Australia
+293	Western Sahara
+294	Wyoming
+295	Yemen
+296	Zambia
+297	Zimbabwe
+298	Zimbabwe  Eswatini
 \.
 
 
@@ -78535,303 +78833,304 @@ COPY public.countries (id, country_name) FROM stdin;
 --
 
 COPY public.country (id, country_name) FROM stdin;
-2	Armenia
-3	Azerbaijan
-4	Belarus
-5	Bhutan
-6	Bosnia and Herzegovina
-7	Bulgaria
-8	Canada
-9	China
-10	Croatia
-11	Bangladesh
-14	India
-15	Indonesia
-16	Laos
-17	Malaysia
-18	Myanmar
-19	Nepal
-20	Russia
-23	Austria
-31	Angola
-32	Argentina
-33	Australia
-34	Bahamas
-36	Benin
-37	Brazil
-38	Cameroon
-40	Cape Verde
-44	Botswana
-45	Burkina Faso
-47	Central African Republic
-48	Chad
-49	DR Congo
-50	Ethiopia
-54	Belize
-55	Bolivia
-58	Chile
-59	Colombia
-60	Costa Rica
-61	Ecuador
-62	El Salvador
-71	Guatemala
-72	Guyana
-73	Honduras
-80	Mexico
-81	Nicaragua
-82	Panama
-83	United States
-84	Algeria
-92	Iran
-93	Kenya
-109	Czech Republic
-110	Estonia
-111	Finland
-112	Germany
-113	Hungary
-114	Kazakhstan
-115	Alberta
-116	British Columbia
-117	Manitoba
-118	New Brunswick
-119	Nova Scotia
-120	Ontario
-121	Québec
-122	Saskatchewan
-123	Alabama
-124	Arizona
-133	Burundi
-134	Cambodia
-143	Congo
-148	Mongolia
-149	Norway
-151	Sweden
-165	Paraguay
-166	Peru
-167	Uruguay
-168	Venezuela
-185	Andorra
-190	Belgium
-199	Kyrgyzstan
-202	Pakistan
-204	Tajikistan
-206	Japan
-207	South Korea
-208	North Korea
-210	Viet Nam
-216	Namibia
-217	South Africa
-226	Malawi
-227	Mozambique
-260	Papua New Guinea
-267	Cote d'Ivoire
-268	Equatorial Guinea
-269	Gabon
-270	Ghana
-271	Tunisia
-284	Antigua and Barbuda
-289	Barbados
-295	Iceland
-302	Egypt
-303	Libya
-304	Mali
-305	Mauritania
-306	Morocco
-307	Niger
-308	Sudan
-362	Madagascar
-365	South Sudan
-371	Swaziland
-372	Uganda
-392	Thailand
-405	Bahrain
-406	Brunei
-409	Comoros
-410	Djibouti
-412	Eritrea
-427	Somalia
-437	Denmark
-438	Indomalayan
-449	Philippines
-466	Sri Lanka
-526	Tanzania
-527	Zimbabwe
-531	Afghanistan
-535	Turkmenistan
-536	Uzbekistan
-566	Rwanda
-592	Lithuania
-593	Poland
-594	Romania
-596	Slovakia
-597	Ukraine
-675	Georgia
-677	Iraq
-678	Israel
-679	Jordan
-681	Lebanon
-687	Nigeria
-688	Oman
-690	Saudi Arabia
-691	Senegal
-692	Syria
-696	Turkey
-700	Western Sahara
-701	Yemen
-705	Guinea
-706	Kuwait
-707	Qatar
-710	United Arab Emirates
-722	Mongolia  Palearctic
-728	Federated States of Micronesia
-729	France
-732	Greece
-816	Hong Kong
-839	Suriname
-876	Taiwan
-877	Spain
-878	Portugal
-880	Italy
-884	Switzerland
-928	Liberia
-929	Sierra Leone
-1012	Singapore
-1040	Grenada
-1055	United States  Nearctic
-1074	Lesotho
-1090	Timor-Leste
-1092	Nearctic
-1093	India   Karnataka
-1094	Kerala
-1095	Tamil Nadu
-1112	Faroe Islands
-1124	Cuba
-1125	Dominican Republic
-1160	Palearctic
-1166	Maldives
-1178	Zambia
-1214	Ireland
-1256	Dominica
-1290	Luxembourg
-1333	Mauritius
-1336	New Zealand
-1424	Cyprus
-1485	Guinea-Bissau
-1487	United States  Alberta
-1489	Labrador
-1492	Newfoundland
-1493	Northwest Territories
-1573	Afrotropical
-1727	Neotropical
-1813	Gambia
-1886	Australasian
-1953	Liechtenstein
-1956	Slovenia
-1986	Guadeloupe
-1987	Jamaica
-1988	Saint Kitts and Nevis
-2165	United States  Nebraska
-2166	Kansas
-2167	Wyoming
-2168	Nevada
-2169	North Dakota
-2170	Texas
-2171	California
-2172	New Mexico
-2173	South Dakota
-2174	Oklahoma
-2245	Saint Vincent and the Grenadines
-2542	Japan  Pacific Ocean
-2583	Palestine
-2842	Moldova
-2929	Dominican Republic  Neotropical
-2951	Turkey  Palearctic
-3043	United Kingdom
-3153	Malta
-3250	Macedonia
-3253	Serbia
-3493	Montenegro
-3634	Latvia
-3637	Belarus  Palearctic
-3741	Togo
-3750	Trinidad and Tobago
-3850	Monaco
-3941	Indonesia  Jawa
-4522	Seychelles
-4688	Australia  Australasian
-4741	Netherlands
-4858	Solomon Islands
-5258	French Guiana
-5371	Peru  Amazonas
-5692	Somalia  Afrotropical
-5729	Indonesia  Indomalayan
-5761	Venezuela  Neotropical
-5899	United States  British Columbia
-5920	Indonesia  Sulawesi
-5994	United States  Pacific Ocean
-6003	San Marino
-6620	Newfoundland I
-6771	Peru  Neotropical
-6819	Nigeria  Bioko
-6839	Madagascar  Afrotropical
-6893	Saint Lucia
-7063	Brazil  Neotropical
-7638	Nicaragua  Neotropical
-8570	Tunisia  Gibraltar
-9148	Mexico  Neotropical
-9695	Gabon  Afrotropical
-10176	Western Australia
-10206	Venezuela  French Guiana
-10385	Uganda  Afrotropical
-10434	Vanuatu
-10515	Namibia  Afrotropical
-10742	Pakistan  Indomalayan
-11279	United States  Arizona
-11282	Utah
-11300	Mexico  Germany
-11377	United States   Nearctic
-11517	Samoa
-11562	Fiji
-11569	Palau
-11752	Macao
-12249	Karnataka
-12449	Syria  Palearctic
-12647	Morocco  Palearctic
-12684	Zimbabwe  Eswatini
-12969	Myanmar  Indomalayan
-13327	United States  New Brunswick
-13528	Nigeria  Afrotropical
-17334	Marshall Islands
-17559	Saint Pierre and Miquelon
-17679	Indonesia  Australasian
-18514	Mexico  Puerto Rico
-18701	Tonga
-20831	Paraguay  Neotropical
-21176	Nicaragua   Neotropical
-22349	Kiribati
-22707	Ecuador   Neotropical
-23440	Uruguay  Neotropical
-23481	Cayman Islands
-23482	Haiti
-23688	Nauru
-24142	Suriname  United States
-24236	United States  Neotropical
-25501	Dominica  Neotropical
-25986	India  Indomalayan
-26956	Chile  French Polynesia
-26957	U.S. Minor Outlying Islands
-26958	Northern Mariana Islands
-26959	Pitcairn
-27169	Eswatini
-27516	Colombia  Neotropical
-27814	Viet Nam  Indomalayan
-28983	Cuba  Neotropical
-29187	Bolivia  Neotropical
-30835	Uruguay  Falkland Islands
-31788	Viet Nam  Palearctic
-32941	Panama  Neotropical
-33385	Venezuela  Falkland Islands
-36882	Sierra Leone  Afrotropical
+1	Afghanistan
+2	Afrotropical
+3	Alabama
+4	Albania
+5	Alberta
+6	Algeria
+7	Andorra
+8	Angola
+9	Antigua and Barbuda
+10	Argentina
+11	Arizona
+12	Armenia
+13	Australasian
+14	Australia
+15	Australia  Australasian
+16	Austria
+17	Azerbaijan
+18	Bahamas
+19	Bahrain
+20	Bangladesh
+21	Barbados
+22	Belarus
+23	Belarus  Palearctic
+24	Belgium
+25	Belize
+26	Benin
+27	Bhutan
+28	Bolivia
+29	Bolivia  Neotropical
+30	Bosnia and Herzegovina
+31	Botswana
+32	Brazil
+33	Brazil  Neotropical
+34	British Columbia
+35	Brunei
+36	Bulgaria
+37	Burkina Faso
+38	Burundi
+39	California
+40	Cambodia
+41	Cameroon
+42	Canada
+43	Cape Verde
+44	Cayman Islands
+45	Central African Republic
+46	Chad
+47	Chile
+48	Chile  French Polynesia
+49	China
+50	Colombia
+51	Colombia  Neotropical
+52	Comoros
+53	Republic of the Congo
+54	Costa Rica
+55	Cote d'Ivoire
+56	Croatia
+57	Cuba
+58	Cuba  Neotropical
+59	Cyprus
+60	Czech Republic
+61	Democratic Republic of the Congo
+62	Denmark
+63	Djibouti
+64	Dominica
+65	Dominica  Neotropical
+66	Dominican Republic
+67	Dominican Republic  Neotropical
+68	Ecuador
+69	Ecuador   Neotropical
+70	Egypt
+71	El Salvador
+72	Equatorial Guinea
+73	Eritrea
+74	Estonia
+75	Eswatini
+76	Ethiopia
+77	Faroe Islands
+78	Federated States of Micronesia
+79	Fiji
+80	Finland
+81	France
+82	French Guiana
+83	Gabon
+84	Gabon  Afrotropical
+85	Gambia
+86	Georgia
+87	Germany
+88	Ghana
+89	Greece
+90	Grenada
+91	Guadeloupe
+92	Guatemala
+93	Guinea
+94	Guinea-Bissau
+95	Guyana
+96	Haiti
+97	Honduras
+98	Hong Kong
+99	Hungary
+100	Iceland
+101	India
+102	India   Karnataka
+103	India  Indomalayan
+104	Indomalayan
+105	Indonesia
+106	Indonesia  Australasian
+107	Indonesia  Indomalayan
+108	Indonesia  Jawa
+109	Indonesia  Sulawesi
+110	Iran
+111	Iraq
+112	Ireland
+113	Israel
+114	Italy
+115	Jamaica
+116	Japan
+117	Japan  Pacific Ocean
+118	Jordan
+119	Kansas
+120	Karnataka
+121	Kazakhstan
+122	Kenya
+123	Kerala
+124	Kiribati
+125	Kuwait
+126	Kyrgyzstan
+127	Labrador
+128	Laos
+129	Latvia
+130	Lebanon
+131	Lesotho
+132	Liberia
+133	Libya
+134	Liechtenstein
+135	Lithuania
+136	Luxembourg
+137	Macao
+138	Macedonia
+139	Madagascar
+140	Madagascar  Afrotropical
+141	Malawi
+142	Malaysia
+143	Maldives
+144	Mali
+145	Malta
+146	Manitoba
+147	Marshall Islands
+148	Mauritania
+149	Mauritius
+150	Mexico
+151	Mexico  Germany
+152	Mexico  Neotropical
+153	Mexico  Puerto Rico
+154	Moldova
+155	Monaco
+156	Mongolia
+157	Mongolia  Palearctic
+158	Montenegro
+159	Morocco
+160	Morocco  Palearctic
+161	Mozambique
+162	Myanmar
+163	Myanmar  Indomalayan
+164	Namibia
+165	Namibia  Afrotropical
+166	Nauru
+167	Nearctic
+168	Neotropical
+169	Nepal
+170	Netherlands
+171	Nevada
+172	New Brunswick
+173	New Mexico
+174	New Zealand
+175	Newfoundland
+176	Newfoundland I
+177	Nicaragua
+178	Nicaragua   Neotropical
+179	Nicaragua  Neotropical
+180	Niger
+181	Nigeria
+182	Nigeria  Afrotropical
+183	Nigeria  Bioko
+184	North Dakota
+185	North Korea
+186	Northern Mariana Islands
+187	Northwest Territories
+188	Norway
+189	Nova Scotia
+190	Oklahoma
+191	Oman
+192	Ontario
+193	Pakistan
+194	Pakistan  Indomalayan
+195	Palau
+196	Palearctic
+197	Palestine
+198	Panama
+199	Panama  Neotropical
+200	Papua New Guinea
+201	Paraguay
+202	Paraguay  Neotropical
+203	Peru
+204	Peru  Amazonas
+205	Peru  Neotropical
+206	Philippines
+207	Pitcairn
+208	Poland
+209	Portugal
+210	Qatar
+211	Québec
+212	Romania
+213	Russia
+214	Rwanda
+215	Saint Kitts and Nevis
+216	Saint Lucia
+217	Saint Pierre and Miquelon
+218	Saint Vincent and the Grenadines
+219	Samoa
+220	San Marino
+221	Saskatchewan
+222	Saudi Arabia
+223	Senegal
+224	Serbia
+225	Seychelles
+226	Sierra Leone
+227	Sierra Leone  Afrotropical
+228	Singapore
+229	Slovakia
+230	Slovenia
+231	Solomon Islands
+232	Somalia
+233	Somalia  Afrotropical
+234	South Africa
+235	South Dakota
+236	South Korea
+237	South Sudan
+238	Spain
+239	Sri Lanka
+240	Sudan
+241	Suriname
+242	Suriname  United States
+243	Swaziland
+244	Sweden
+245	Switzerland
+246	Syria
+247	Syria  Palearctic
+248	Taiwan
+249	Tajikistan
+250	Tamil Nadu
+251	United Republic of Tanzania
+252	Texas
+253	Thailand
+254	Timor-Leste
+255	Togo
+256	Tonga
+257	Trinidad and Tobago
+258	Tunisia
+259	Tunisia  Gibraltar
+260	Turkey
+261	Turkey  Palearctic
+262	Turkmenistan
+263	U.S. Minor Outlying Islands
+264	Uganda
+265	Uganda  Afrotropical
+266	Ukraine
+267	United Arab Emirates
+268	United Kingdom
+269	United States of America
+270	United States   Nearctic
+271	United States  Alberta
+272	United States  Arizona
+273	United States  British Columbia
+274	United States  Nearctic
+275	United States  Nebraska
+276	United States  Neotropical
+277	United States  New Brunswick
+278	United 
+279	Uruguay
+280	Uruguay  Falkland Islands
+281	Uruguay  Neotropical
+282	Utah
+283	Uzbekistan
+284	Vanuatu
+285	Venezuela
+286	Venezuela  Falkland Islands
+287	Venezuela  French Guiana
+288	Venezuela  Neotropical
+289	Viet Nam
+290	Viet Nam  Indomalayan
+291	Viet Nam  Palearctic
+292	Western Australia
+293	Western Sahara
+294	Wyoming
+295	Yemen
+296	Zambia
+297	Zimbabwe
+298	Zimbabwe  Eswatini
 \.
 
 

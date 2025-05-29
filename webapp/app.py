@@ -15,6 +15,11 @@ def home():
 def home_page():
     return flask.render_template('mockup1.html')
 
+@app.route('/map')
+def map_page():
+    return flask.render_template('map-sample-world.html')
+    
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser('An animal application, including API & DB')
     parser.add_argument('host', help='the host to run on')
