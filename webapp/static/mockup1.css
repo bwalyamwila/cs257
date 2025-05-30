@@ -32,7 +32,7 @@ html, body {
 }
 
 .intro {
-    
+    padding: 10px;
     margin: 20px auto;
     width: 80%;
     text-align: center;
@@ -87,14 +87,14 @@ html, body {
 .info-box-group {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
 
 .info-box{
     border: 2px solid black;
     padding: 15px;
     width: 200px;
-    
+    height: 150px;
     background-color: 	#fef4c0;
     border-radius: 10px; 
     text-align: center;
@@ -104,7 +104,7 @@ button {
     padding: 8px 14px;
     border-radius: 5px;
     font-weight: bold;
-    background-color: 	#06600c;
+    background-color: 	#fef4c0;
 
 }
 

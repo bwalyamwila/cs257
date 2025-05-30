@@ -15,10 +15,18 @@
             <h1 class="title"><a href="/home" style="text-decoration: none; color: inherit;">Wild Thangs</a></h1>
             <div class="nav-bar">
                 <div class="nav-icons">
-                    <!-- <button title="Back">Back</button> -->
-                    <!-- <button title="Home"><a href="/home" style="text-decoration: none; color: inherit;">🏠</a></button> -->
+                    <button title="Back">Back</button>
+                    <button title="Home"><a href="/home" style="text-decoration: none; color: inherit;">🏠</a></button>
                 </div>
-                
+                <div class="search-box">
+                    <!-- <input type="text" placeholder="Type country or animal to search" />
+                    <button title="Search">test</button> -->
+
+                    <p>
+                        <input type="text" id="animal_search_text" placeholder="Search animal by name" /> 
+                        <button id="animal_search_button">Search</button>
+                    </p>
+                </div>
             </div>
         </div>
     </header>
@@ -32,13 +40,13 @@
         <div class="continent-list">
             <h2 style="text-decoration: underline;">Continents</h2>
             <ul>
-                <li><a href="/continent/Africa">Africa</a></li>
-                <li><a href="/continent/Antarctica">Antarctica</a></li>
-                <li><a href="/continent/Asia">Asia</a></li>
-                <li><a href="/continent/Australia">Australia</a></li>
-                <li><a href="/continent/Europe">Europe</a></li>
-                <li><a href="/continent/North-America">North America</a></li>
-                <li><a href="/continent/South-America">South America</a></li>
+                <li><a href="#africa">Africa</a></li>
+                <li><a href="#antarctica">Antarctica</a></li>
+                <li><a href="#asia">Asia</a></li>
+                <li><a href="#australia">Australia</a></li>
+                <li><a href="#europe">Europe</a></li>
+                <li><a href="#north-america">North America</a></li>
+                <li><a href="#south-america">South America</a></li>
             </ul>
         </div>
 
@@ -58,24 +66,12 @@
         <div class="info-box-group">
             <div class="info-box">
                 <h2 style="text-decoration: underline;">Filter Options</h2>
-                <!-- <ul>
+                <ul>
                     <li><a href=" #Status">Status</a></li>
                     <li><a href=" #Trend">Trend</a></li>
                     <li><a href=" #Continents">Continents</a></li>
                     <li><a href=" #Countries">Countries</a></li>
-                </ul> -->
-                
-                    <!-- <input type="text" placeholder="Type country or animal to search" />
-                    <button title="Search">test</button> -->
-
-                    <p>
-                        Want to search for specific animals, species, population status, or population trends?
-                        <!-- for now will keep the search box out of the picture -->
-                        <!-- <input type="text" id="animal_search_text" placeholder="Search animal by name" />  -->
-                        
-                    </p>
-                    <button id="animal_search_button"><u style="color: rgb(255, 255, 255);">Click Here For Search Bar</u></button>
-                
+                </ul>
             </div>  
             <div class="info-box">
                 <h2>Animal Selector</h2>
