@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='continent.css') }}" />
+    <script type="text/javascript" src="{{ url_for('static', filename='australiaList.js') }}" ></script>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+    <title>Wild Thangs</title>
+
+
+</head>
+
+<body>
+    <header>
+        <div class="header-bar">
+            <h1 class="title"><a href="/home" style="text-decoration: none; color: inherit;">Wild Thangs</a></h1>
+            
+        </div>
+    </header>
+
+    <div class="main-container">
+
+        <div class="animal-info-search-results">
+            <h2 style="text-decoration: underline; color: rgb(100, 66, 11); ">Animal List</h2>
+                <p><ul id="animal_list"></ul></p>
+            
+        </div>
+
+        <div class="animal-info-list">
+            <h2 style="text-decoration: underline; color: rgb(21, 100, 11); text-align: center;">Animal Info Result</h2>
+            <p><table id="results_table"></table></p>
+            
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -111,7 +111,7 @@ def get_species(first_letter):
 def get_continent(continent):
     animals = []
     try:
-        query  = '''SELECT animals.animal_name 
+        query  = '''SELECT animals.id, animals.animal_name 
                     FROM animals , animals_continents , continents 
                     WHERE continents.continent_name ILIKE CONCAT ('%%', %s, '%%') 
                     AND continents.id = animals_continents.continent_id 
@@ -120,7 +120,7 @@ def get_continent(continent):
         cursor = connection.cursor()
         cursor.execute(query, (continent,))
         for row in cursor: 
-            animals.append({'animal name: ':row[0]})
+            animals.append({'animal id':row[0], 'animal name':row[1]})
            
     except Exception as e:
         print(e, file=sys.stderr)
@@ -132,7 +132,7 @@ def get_continent(continent):
 def get_country(country):
     animals = []
     try:
-        query  = '''SELECT animals.animal_name 
+        query  = '''SELECT animals.id, animals.animal_name 
                     FROM animals , animals_countries , countries 
                     WHERE countries.country_name ILIKE CONCAT (%s, '%%') 
                     AND countries.id = animals_countries.country_id 
@@ -141,7 +141,7 @@ def get_country(country):
         cursor = connection.cursor()
         cursor.execute(query, (country,))
         for row in cursor: 
-            animals.append({'animal name: ':row[0]})
+            animals.append({'animal id':row[0], 'animal name':row[1]})
            
     except Exception as e:
         print(e, file=sys.stderr)
@@ -242,7 +242,7 @@ def getanimal_info(prefix):
         print(e, file=sys.stderr)
 
     connection.close()
-    return json.dumps(animal_info)
+    return json.dumps(animal_info) #takes a list of dictionaries and dumps returns a string
 
 @api.route('/help')
 def get_help():
