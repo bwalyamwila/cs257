@@ -7,12 +7,12 @@ import api
 app = flask.Flask(__name__, static_folder='static', template_folder='templates')
 app.register_blueprint(api.api, url_prefix='/api')
 
-@app.route('/search') 
-def search():
-    return flask.render_template('searchPage.html')
+@app.route('/') 
+def home():
+    return flask.render_template('index.html')
 
-@app.route('/home') 
-def h():
+@app.route('/home')
+def home_page():
     return flask.render_template('mockup1.html')
 
 @app.route('/animal/<animal_name>')

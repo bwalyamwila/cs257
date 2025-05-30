@@ -44,7 +44,7 @@ def get_animals_country(country_name):
     return json.dumps(animals)
 
 
-@api.route('/animals/')
+@api.route('/animals')
 def get_animals():
     animals = []
     try:
@@ -66,13 +66,11 @@ def get_animals():
 def hello():
     return 'Hi there curious animal lover.'
 
-# need to add the element of retrieving the animal ID as I need it for a task
 @api.route('/animals/status/<status>')
 def get_status(status):
     animals = []
     try:
-        # SELECT animals.animal_name FROM ...
-        query = '''SELECT animals.id, animals.animal_name FROM animals, populationStatus, animals_concern
+        query = '''SELECT animals.animal_name FROM animals, populationStatus, animals_concern
                 WHERE animals.id = animals_concern.animal_id
                 AND populationStatus.status ILIKE CONCAT('%%', %s, '%%')
                 AND animals_concern.status_id = populationStatus.id'''
@@ -80,27 +78,27 @@ def get_status(status):
         cursor = connection.cursor()
         cursor.execute(query, (status,))
         for row in cursor: 
-            animals.append({'animal id':row[0], 'animal name':row[1]})
-        #     'animal name :':row[0]
+            animals.append({'animal name: ':row[0]})
+           
     except Exception as e:
         print(e, file=sys.stderr)
 
     connection.close()
     return animals
 
-@api.route('/animals/species/<first_letter>/')
+@api.route('/animals/species/<first_letter>')
 def get_species(first_letter):
     animals = []
     try:
-        query  = '''SELECT animals.id, animals.animal_name, animals.animal_species 
+        query  = '''SELECT animals.animal_name, animals.animal_species 
                     FROM animals 
                     WHERE animals.animal_species ILIKE CONCAT (%s, '%%');'''
         connection = get_connection()
         cursor = connection.cursor()
         cursor.execute(query, (first_letter,))
         for row in cursor: 
-            animals.append({'animal id':row[0], 'animal name':row[1], 'animal species':row[2]})
-        #    changed the order of the list so that now it includes animal id
+            animals.append({'animal name: ':row[0], 'animal species: ':row[1]})
+           
     except Exception as e:
         print(e, file=sys.stderr)
 
@@ -191,30 +189,29 @@ def get_animalscontinent(animal):
     connection.close()
     return animals
 
-# need to add the element of retrieving the animal ID as I need it for a task
 @api.route('/animals/trend/<trend>')
 def get_trend(trend):
     animals = []
-    try: 
-        query = '''SELECT animals.id, animals.animal_name FROM animals, populationttrend, animals_concern
+    try:
+        query = '''SELECT animals.animal_name FROM animals, populationttrend, animals_concern
                 WHERE animals.id = animals_concern.animal_id
                 AND populationttrend.trend ILIKE CONCAT('%%', %s, '%%')
                 AND animals_concern.trend_id = populationttrend.id;'''
-        # SELECT animals.animal_name FROM ...
+        
         connection = get_connection()
         cursor = connection.cursor()
         cursor.execute(query, (trend,))
         for row in cursor: 
-            animals.append({'animal id':row[0], 'animal name':row[1]})
-        #    'animal name :':row[0]
+            animals.append({'animal name: ':row[0]})
+           
     except Exception as e:
         print(e, file=sys.stderr)
 
     connection.close()
     return animals
 
-@api.route('/animals/animal_info/<prefix>/')
-def getanimal_info(prefix):
+@api.route('/animals/animal_info/<prefix>')
+def getanimal_inf0(prefix):
     animal_info = []
     try:
         query = '''SELECT animals.id, animals.animal_name, animals.animal_species, 
@@ -234,9 +231,9 @@ def getanimal_info(prefix):
         cursor = connection.cursor()
         cursor.execute(query, (prefix,))
         for row in cursor: 
-            animal_info.append({'animal id': row[0],'animal name':row[1], 'animal species':row[2], 
-            'animal lifespan':row[3], 'animal trend':row[4], 'animal status':row[5], 
-            'animal countries':row[6], 'animal continents':row[7]})
+            animal_info.append({'animal id': row[0],'animal name: ':row[1], 'animal species: ':row[2], 
+            'animal lifespan: ':row[3], 'animal trend: ':row[4], 'animal status: ':row[5], 
+            'animal countries: ':row[6], 'animal continents: ':row[7]})
            
     except Exception as e:
         print(e, file=sys.stderr)
