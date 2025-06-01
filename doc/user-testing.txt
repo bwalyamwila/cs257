@@ -1,0 +1,20 @@
+User Testing Observations
+30 May 2025
+
+Things the testers found easy
+- Given the interactive map page, they could get the names of animals from a random country by clicking on a country
+- When told to search for an animal, they were able to use the search box and find the animal they were looking for
+
+Things people had trouble with
+- On the home page, many people tried to use the links we had for looking at animals in continents or the filters, yet we had to let them know that they were not functioning because of technical difficulties we had (Jacky’s code didn’t work and she was supposed to make the links work)
+- if they clicked on a country (on the interactive map) and it did not return a list, it was hard to know whether they clicked on it “correctly”, it wasn’t working, of there were no animals from that country in our database 
+- When clicking on the “back” button, they were puzzled as to why it didn’t work (we had to tell them that it was not programmed to do anything)
+
+Other positive comments or observations
+- People liked the map and the structure in which the names of the animals popped up when you clicked on a country (was even asked to see the CSS and HTML for the structure of how the animal names were made to look the way Bwalya made them)
+- People liked the presentation of the home page, they said it looked neat!
+
+Other suggestions for improvement
+- When a user was testing out the map, we were told to place the list of animals that pops up below the map, so that the user knows that they can use the map again
+- We were told to make the list of animals that show up as a result of a search request appear more neatly, as right now it shows up in a weird format (CSS issue probably)
+- We were told that some searches for animals provide “double” results, meaning that we would be presented with information on “two” different animals when it is only one 
