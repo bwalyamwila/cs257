@@ -75,6 +75,11 @@ html, body {
     text-align: center;
 }
 
+.title a:hover {
+    color: #FFD700 !important; /* bright yellow */
+    transition: color 0.2s;
+}
+
 .info-box-group {
     display: flex;
     flex-direction: column;

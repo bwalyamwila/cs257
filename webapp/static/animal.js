@@ -2,7 +2,6 @@ window.addEventListener("load", initialize);
 
 function initialize() {
 
-    // Add this for animal search
     var search_button = document.getElementById('animal_search_button');
     if (search_button) {
         search_button.onclick = onAnimalSearch;
