@@ -103,3 +103,10 @@ h1,h2,h3,li {
     color: #204d31;
 }
 
+#animal-details{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+}
