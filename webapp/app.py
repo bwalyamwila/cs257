@@ -7,11 +7,11 @@ import api
 app = flask.Flask(__name__, static_folder='static', template_folder='templates')
 app.register_blueprint(api.api, url_prefix='/api')
 
-@app.route('/') 
+@app.route('/index') 
 def home():
     return flask.render_template('index.html')
 
-@app.route('/home')
+@app.route('/')
 def home_page():
     return flask.render_template('mockup1.html')
 
