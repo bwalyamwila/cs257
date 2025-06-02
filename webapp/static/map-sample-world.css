@@ -41,6 +41,32 @@
     display: flex;
     gap: 10px;
 }
+
+button {
+    padding: 8px 14px;
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: 	#fef4c0;
+
+}
+.title{
+    font-size: 50px;
+    margin-bottom: 10px;
+    font-style: italic, sans-serif;
+    text-align: center;
+}
+
+.title a:hover {
+    color: #FFD700 !important; /* bright yellow */
+    transition: color 0.2s;
+}
+
+h1,h2,h3,li {
+    color: #264d35;
+}
+
+
+
 #map-container {
     position: relative;
     float: left;

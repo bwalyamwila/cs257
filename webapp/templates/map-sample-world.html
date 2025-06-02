@@ -11,19 +11,22 @@
 </head>
 
     <body>
+        <header>
         <div class="header-bar">
-            <h1 class="title" >Wild Thangs</h1>
+            <h1 class="title"><a href="/" style="text-decoration: none; color: inherit;">Wild Thangs</a></h1>
             <div class="nav-bar">
                 <div class="nav-icons">
-                    <button title="Back">Back</button>
-                    <button title="Home">🏠</button>
+                    <button title="Home"><a href="/" style="text-decoration: none; color: inherit;">🏠</a></button>
                 </div>
-                <div class="search-box">
-                    <input type="text" placeholder="Type country or animal to search" />
-                    <button title="Search">🔍</button>
+                <div class="search-box">         
+                    <p>
+                        <input type="text" id="animal_search_text" placeholder="Search animal by name" /> 
+                        <button id="animal_search_button">Search</button>
+                    </p>
                 </div>
             </div>
         </div>
+    </header>
         <h2>Click on a country to see the animals found there!</h2>
         
     <div id="animal_list"></div>
