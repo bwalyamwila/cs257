@@ -23,6 +23,9 @@ def animal_page(animal_name):
 def map_page():
     return flask.render_template('map-sample-world.html')
     
+@app.route('/continent/<continent_name>')
+def continent_page(continent_name):
+    return flask.render_template('testing.html', continent_name=continent_name)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser('An animal application, including API & DB')

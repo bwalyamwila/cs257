@@ -109,7 +109,7 @@ def get_species(first_letter):
 def get_continent(continent):
     animals = []
     try:
-        query  = '''SELECT animals.animal_name 
+        query  = '''SELECT animals.animal_name, animals.id 
                     FROM animals , animals_continents , continents 
                     WHERE continents.continent_name ILIKE CONCAT ('%%', %s, '%%') 
                     AND continents.id = animals_continents.continent_id 
@@ -118,7 +118,7 @@ def get_continent(continent):
         cursor = connection.cursor()
         cursor.execute(query, (continent,))
         for row in cursor: 
-            animals.append({'animal name: ':row[0]})
+            animals.append({'animal name: ':row[0], "animal id: ":row[1]})
            
     except Exception as e:
         print(e, file=sys.stderr)
@@ -210,7 +210,7 @@ def get_trend(trend):
     connection.close()
     return animals
 
-@api.route('/animals/animal_info/<prefix>')
+@api.route('/animals/animal_info/<prefix>/')
 def getanimal_inf0(prefix):
     animal_info = []
     try:
