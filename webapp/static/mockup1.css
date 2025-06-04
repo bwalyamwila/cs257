@@ -7,6 +7,7 @@
 html, body {
     background: url('ImageFolder/Jungle-Backgroynd.jpg');
     background-size: cover;
+    background-repeat: no-repeat ;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -77,6 +78,10 @@ html, body {
     padding-bottom: 20px;
 }
 
+.continent-list ul li :hover {
+    color: #FFD700; 
+    transition: color 0.2s;
+}
 .title{
     font-size: 50px;
     margin-bottom: 10px;
@@ -85,7 +90,7 @@ html, body {
 }
 
 .title a:hover {
-    color: #FFD700 !important; /* bright yellow */
+    color: #FFD700 !important;
     transition: color 0.2s;
 }
 
@@ -112,6 +117,14 @@ button {
     background-color: 	#fef4c0;
 
 }
+
+button:hover {
+    background-color: #FFD700; 
+    color: black;
+    transition: color 0.2s;
+    cursor: pointer;
+}
+
 
 h1,h2,h3,li {
     color: #264d35;
