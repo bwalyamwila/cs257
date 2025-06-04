@@ -50,10 +50,11 @@ button {
 
 }
 
-button :hover {
+button:hover {
     background-color: #FFD700; 
     color: black;
     transition: color 0.2s;
+    cursor: pointer;
 }
 
 .title{
