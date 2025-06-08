@@ -146,7 +146,8 @@ def main(input_filename):
         for status, status_id in populationStatusDict.items():
             writer.writerow([status_id, status])     
     
-#Creates a csv file that connects each animals to its respective continent, country, population trend, and population status
+#Creates a csv file that connects each animals to its respective 
+#continent, country, population trend, and population status
     with open('animals_continents.csv', 'w', newline='') as f:
         writer = csv.writer(f)
         for link in LinkTable:
