@@ -54,7 +54,7 @@ function getAllAnimalsInContinent() {
             }
             var listTitleElement = document.getElementById('list_title');
             if (listTitleElement) {
-                listTitleElement.innerHTML = encodeURIComponent(continentName) + '\'s' + ' Animal List';
+                listTitleElement.innerHTML = continentName + '\'s' + ' Animal List';
             }
             var emptyResultElement = document.getElementById('results_table');
             if (emptyResultElement) {
