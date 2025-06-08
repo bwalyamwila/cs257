@@ -2,6 +2,10 @@ window.addEventListener("load", initialize);
 
 function initialize() {
     getAllAnimalsInContinent();
+    var search_button = document.getElementById('animal_search_button');
+    if (search_button) {
+        search_button.onclick = onAnimalSearch;
+    }
 }
 
 function getAPIBaseURL() {
@@ -39,7 +43,6 @@ function getAllAnimalsInContinent() {
                             + animalName + '</a>';
                 listBody += '</li>';
             }
-
             var noResult = '' ; 
             noResult += '<ul>' + '<li>Species: </li>' + 
                     '<li>Lifespan: </li>' + '<li>Population Trend: </li>' +
