@@ -70,7 +70,7 @@ function onCountryClick(geography) {
         for (var k = 0; k < countryData.length; k++) {
                 var animalName = countryData[k]['animal name'];
                 animals += '<a href="/animal/' + encodeURIComponent(animalName) 
-                        + '" target="_blank">' + animalName + '</a><br>';
+                        + '">' + animalName + '</a><br>';
             }
             var resultsDiv = document.getElementById('animal_list');
             if (resultsDiv) {

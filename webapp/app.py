@@ -7,13 +7,13 @@ import api
 app = flask.Flask(__name__, static_folder='static', template_folder='templates')
 app.register_blueprint(api.api, url_prefix='/api')
 
-@app.route('/index') 
-def home():
-    return flask.render_template('index.html')
+@app.route('/help')
+def help_page():
+    return flask.render_template('help.html')
 
 @app.route('/')
 def home_page():
-    return flask.render_template('mockup1.html')
+    return flask.render_template('home.html')
 
 @app.route('/animal/<animal_name>')
 def animal_page(animal_name):
@@ -21,11 +21,11 @@ def animal_page(animal_name):
 
 @app.route('/map')
 def map_page():
-    return flask.render_template('map-sample-world.html')
+    return flask.render_template('map_page.html')
     
 @app.route('/continent/<continent_name>')
 def continent_page(continent_name):
-    return flask.render_template('testing.html', continent_name=continent_name)
+    return flask.render_template('continent_animals.html', continent_name=continent_name)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser('An animal application, including API & DB')
