@@ -74,7 +74,24 @@ function onCountryClick(geography) {
             }
             var resultsDiv = document.getElementById('animal_list');
             if (resultsDiv) {
-                resultsDiv.innerHTML = animals;
+                if (animals) {
+                    resultsDiv.innerHTML = animals; 
+                    var countryHeader = document.getElementById('country_selected');
+                    countryHeader.innerHTML = '<p>' + countryName + '\'s animals: </p>';
+                    var instructionsHeader = document.getElementById('instructions');
+                    instructionsHeader.innerHTML = '<p>⭐Click on an animal to learn more about it!</p> <p>⭐Or scroll to the bottom to select another country...</p>';
+                    window.scrollTo({ top: 0, behavior: 'smooth' }); //used the code from https://stackoverflow.com/questions/1144805/scroll-to-the-top-of-the-page-using-javascript
+                } else {
+                    var instructionsHeader = document.getElementById('instructions');
+                    if (instructionsHeader) {
+                        instructionsHeader.innerHTML = 'Sorry, we don\'t have information on animals that live here. 😞 Click on another country!';
+                    };
+                    resultsDiv.innerHTML = '';
+                    var countryHeader = document.getElementById('country_selected');
+                    countryHeader.innerHTML = '';
+                    window.scrollTo({ top: 0, behavior: 'smooth' }); //used the code from https://stackoverflow.com/questions/1144805/scroll-to-the-top-of-the-page-using-javascript
+                }
+                    
                 }
     })
     

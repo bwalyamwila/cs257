@@ -101,6 +101,7 @@ html, body {
 }
 
 .info-box{
+    margin-top: 100px;
     border: 2px solid black;
     padding: 15px;
     width: 200px;

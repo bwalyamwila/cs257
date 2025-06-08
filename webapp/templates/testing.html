@@ -6,8 +6,6 @@
     <script type="text/javascript" src="{{ url_for('static', filename='testing.js') }}" ></script>
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
     <title>Wild Thangs</title>
-
-
 </head>
 
 <body>
@@ -17,12 +15,10 @@
             <div class="nav-bar">
                 <div class="nav-icons">
                     <button title="Back" onclick="window.history.back();">Back</button>
+                    <button title="Map"><a href="/map" style="text-decoration: none; color: inherit;">Map</a></button>
                     <button title="Home"><a href="/" style="text-decoration: none; color: inherit;">🏠</a></button>
                 </div>
                 <div class="search-box">
-                    <!-- <input type="text" placeholder="Type country or animal to search" />
-                    <button title="Search">test</button> -->
-
                     <p>
                         <input type="text" id="animal_search_text" placeholder="Search animal by name" /> 
                         <button id="animal_search_button">Search</button>
@@ -31,77 +27,18 @@
             </div>
         </div>
     </header>
-
     <div class="main-container">
-        <!-- <div class="animal-info-search-results">
-            <h2 style="text-decoration: underline; color: rgb(100, 66, 11); ">Countries List</h2>
-            <button id="getData">Search 🔍</button>
-                <p><ul id="countries_list"></ul></p> -->
-                
-            
-            <!-- <ul>   
-                <li><b>Name: </b>Grey Wolf</li>
-                <li><b>Species: </b>Canis Lupus</li>
-                <li><b>Life Span: </b>10-20 years</li>
-                <li><b>Continents: </b>
-                    <p><a href="#africa">Africa</a>, <a href="#asia">Asia</a>, 
-                       <a href="#europe">Europe</a>, <a href="#north-america">North America</a></p>
-                </li>
-                <li><b>Countries: </b>
-                    <p><a href="#albania">Albaina</a>, <a href="#armenia">Armenia</a>, 
-                       <a href="#azerbaija">Azerbaija</a>, <a href="#belarus">Belarus</a>, 
-                       <a href="#bhutan">Bhutan</a>, <a href="#bosnia-and-herzegovina">Bosnia and Herzegovina</a>, 
-                       <a href="#bulgaria">Bulgaria</a>, <a href="#canada">Canada</a>, <a href="#china">China</a>, 
-                       <a href="#croatia">Croatia</a></p> 
-                </li>
-                <li><b>Population Trend: </b>Stable</li>
-                <li><b>Population Status: </b>Least Concern (LC)</li>
-            </ul> -->
-        <!-- </div> -->
 
         <div class="animal-info-search-results">
-            <h2 style="text-decoration: underline; color: rgb(100, 66, 11); ">Animal List</h2>
+            <h2 style="color: rgb(100, 66, 11); " id = "list_title"></h2>
             <h3 style="color: rgb(100, 66, 11); ">Select an animal to learn more about it!</h3>
                 <p><ul id="animal_list"></ul></p>
-                
-            
-            <!-- <ul>   
-                <li><b>Name: </b>Grey Wolf</li>
-                <li><b>Species: </b>Canis Lupus</li>
-                <li><b>Life Span: </b>10-20 years</li>
-                <li><b>Continents: </b>
-                    <p><a href="#africa">Africa</a>, <a href="#asia">Asia</a>, 
-                       <a href="#europe">Europe</a>, <a href="#north-america">North America</a></p>
-                </li>
-                <li><b>Countries: </b>
-                    <p><a href="#albania">Albaina</a>, <a href="#armenia">Armenia</a>, 
-                       <a href="#azerbaija">Azerbaija</a>, <a href="#belarus">Belarus</a>, 
-                       <a href="#bhutan">Bhutan</a>, <a href="#bosnia-and-herzegovina">Bosnia and Herzegovina</a>, 
-                       <a href="#bulgaria">Bulgaria</a>, <a href="#canada">Canada</a>, <a href="#china">China</a>, 
-                       <a href="#croatia">Croatia</a></p> 
-                </li>
-                <li><b>Population Trend: </b>Stable</li>
-                <li><b>Population Status: </b>Least Concern (LC)</li>
-            </ul> -->
         </div>
 
         <div class="animal-info-list">
-            <h2 style="text-decoration: underline; color: rgb(21, 100, 11); text-align: center;">Animal Info Result</h2>
+            <h2 style="color: rgb(21, 100, 11); text-align: center; " id = "animal_title">Animal Info Result</h2>
             <p><table id="results_table"></table></p>
-            
-            <!-- <img src="ImageFolder/Eurasian_wolf_2.jpg" alt="Grey Wolf" style="width:100%; border-radius: 10px;">
-            <h3 style="text-decoration: underline;">Grey Wolf</h3> -->
-            <!--Credit: By <a href="//commons.wikimedia.org/w/index.php?title=User:Mas3cf&amp;action=edit&amp;redlink=1" class="new" title="User:Mas3cf (page does not exist)">User:Mas3cf</a> - This file was derived from: <a href="//commons.wikimedia.org/wiki/File:Eurasian_wolf.JPG" title="File:Eurasian wolf.JPG">Eurasian wolf.JPG</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=95523086">Link</a>
-                        By User:Mas3cf - This file was derived from: Eurasian wolf.JPG, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=95523086 -->
         </div>
-
-
-        
     </div>
-
-
-
-
-
 </body>
 </html>

@@ -17,6 +17,7 @@
             <div class="nav-bar">
                 <div class="nav-icons">
                     <button title="Back" onclick="window.history.back();">Back</button>
+                    <button title="Map"><a href="/map" style="text-decoration: none; color: inherit;">Map</a></button>
                     <button title="Home"><a href="/" style="text-decoration: none; color: inherit;">🏠</a></button>
                 </div>
                 <div class="search-box">         
@@ -28,7 +29,8 @@
             </div>
         </div>
     </header>
-        <h2>Click on a country to see the animals found there!</h2>
+        <h1 id = "country_selected"></h1>
+        <h2 id = "instructions">Click on a country to see the animals found there!</h2>
         
     <div id="animal_list"></div>
 
