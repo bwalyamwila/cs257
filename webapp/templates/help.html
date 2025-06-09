@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Animals API reference</title>
+    <title>Animals APP/API reference</title>
 </head>
 <body>
-    <pre>Animals API: endpoint reference
+    <pre>Animals APP: endpoint reference
 
 REQUEST: /help
 RESPONSE:
@@ -33,3 +33,59 @@ RESPONSE:
         Takes the user to a page that lists with links of all the animals found in the continent specified.
         There is a side bar that when an animal is clicked on, it shows the summary information about the animal.
 
+
+============================================
+    Animals APi: endpoint reference
+
+REQUEST: /help
+RESPONSE:
+    This message.
+
+REQUEST: /animals/country/{country_name}
+RESPONSE:
+    Returns a list of animals found in the specified country.
+    The response includes the animal name, scientific name, and a brief description.
+
+REQUEST: /animals
+RESPONSE:
+    Returns a list of all animals in the database.
+    The response includes the animal name, scientific name, and a lifespan, etc.
+
+REQUEST: /animals/status/{status}
+RESPONSE:
+    Returns a list of animals filtered by their conservation status. 
+    Look up all animals with a particular conservation status.
+    The status parameter is the population status abbreviation (e.g., LC, EN, VU, NT, NE, CR, DD).
+
+REQUEST: /animals/species/{first_letter}    
+RESPONSE:
+    Returns a list of animals filtered by the first letter of their species name.
+    The first_letter parameter is the first letter of the species name (e.g., A, B, C, etc.).
+
+REQUEST: /animals/continent/{continent}
+RESPONSE:
+    Returns a list of animals found in the specified continent.
+    The response includes the animal name, scientific name, and more.
+
+REQUEST: /animals/countries/{country}
+RESPONSE:
+    Returns a list of countries where the specified animal can be found.
+    Note: Slightly different from the /animals/country/{country_name} endpoint.
+
+REQUEST: /animals/animal_countries/{animal}
+RESPONSE:
+   Returns all the countries where a given animal is found
+
+REQUEST: /animals/animal_continents/{animal}
+RESPONSE:
+    Returns all the continents where a given animal is found
+
+REQUEST: /animals/trend/{trend}
+RESPONSE:
+    Returns a list of animals filtered by their population trend.
+    The trend parameter is the population trend abbreviation (e.g., Stable, Increasing, Decreasing, etc.).
+
+REQUEST: /animals/animal_info/{animal_name}
+RESPONSE:
+    Returns detailed information about a specific animal, including its name, species, lifespan, continents, countries, population trend, and conservation status.
+    The animal_name parameter is the name of the animal to retrieve information for.

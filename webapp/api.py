@@ -8,6 +8,7 @@ import csv
 import psycopg2
 import sys
 
+
 import config
 
 api = flask.Blueprint('api', __name__)
