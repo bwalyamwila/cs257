@@ -1,4 +1,4 @@
-// mockup1.js - JavaScript for the animal information web application
+// home.js - JavaScript for the animal information web application
 // Runs when the page loads; sets up button click handlers
 window.addEventListener("load", initialize);
 

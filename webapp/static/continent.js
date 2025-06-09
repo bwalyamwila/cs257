@@ -16,7 +16,6 @@ function getAPIBaseURL() {
 function getAllAnimalsInContinent() {
     var url = getAPIBaseURL() + '/animals/continents/Africa'; 
 
-
     fetch(url, {method: 'get'})
         .then((response) => response.json())
         .then(function(animalList) {
@@ -43,7 +42,6 @@ function getAllAnimalsInContinent() {
 
 function getAnimal(animal_name, animal_id) {
         var url = getAPIBaseURL() + '/animals/animal_info/' + animal_name + '/'; 
-
         
         fetch(url, {method: 'get'})
         .then((response) => response.json())
@@ -83,4 +81,4 @@ function onAnimalSearch() {
         // Redirect to a new page for the animal
         window.location.href = '/animal/' + encodeURIComponent(query);
     }
-} 
+}

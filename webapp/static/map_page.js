@@ -12,13 +12,6 @@
 
 window.addEventListener("load", initialize);
 
-// This is example data that gets used in the click-handler below. Also, the fillColor
-// specifies the color those countries should be. There's also a default color specified
-// in the Datamap initializer below.
-var extraCountryInfo = {
-
-};
-
 function initialize() {
     initializeMap();
 
@@ -38,7 +31,6 @@ function initializeMap() {
                             scope: 'world', // which map?
                             projection: 'equirectangular', // what map projection? 'mercator' is also an option
                             done: onMapDone, // once the map is loaded, call this function
-                            data: extraCountryInfo, // here's some data that will be used by the popup template
                             fills: { defaultFill: '#999999' },
                             geographyConfig: {
                                 //popupOnHover: false, // You can disable the hover popup
@@ -59,7 +51,7 @@ function onMapDone(dataMap) {
 
 function onCountryClick(geography) {
 //When clicked takes the user to a new page
-    // geography.properties.name will be the state/country name (e.g. 'Minnesota')
+    // geography.properties.name will be the country name
     var countryName = geography.properties.name;
     var url = getAPIBaseURL() + '/animal/country/' + encodeURIComponent(countryName);
 
@@ -89,7 +81,8 @@ function onCountryClick(geography) {
                     resultsDiv.innerHTML = '';
                     var countryHeader = document.getElementById('country_selected');
                     countryHeader.innerHTML = '';
-                    window.scrollTo({ top: 0, behavior: 'smooth' }); //used the code from https://stackoverflow.com/questions/1144805/scroll-to-the-top-of-the-page-using-javascript
+                    //used the code from https://stackoverflow.com/questions/1144805/scroll-to-the-top-of-the-page-using-javascript
+                    window.scrollTo({ top: 0, behavior: 'smooth' }); 
                 }
                     
                 }
@@ -100,8 +93,8 @@ function onCountryClick(geography) {
     });
 }
 
-
-
+// Adds feacture that when an animal is searched, it takes the user to a new page
+// and displays the information of the animal searched
 function onAnimalSearch() {
     var searchInput = document.getElementById('animal_search_text');
     var query = '';
@@ -169,7 +162,7 @@ window.addEventListener("load", function() {
             console.log(error);
         });
 
-
+//Adds search feature to map page
     var searchButton = document.getElementById('animal_search_button');
     if (searchButton) {
         searchButton.onclick = function() {
