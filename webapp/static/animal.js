@@ -61,7 +61,7 @@ window.addEventListener("load", function() {
                 // Build HTML for each animal (details only)
                 resultsHTML += `
                     <div class="info-box-with-photo" style="margin-bottom:20px;">
-                        <h3 style="text-decoration: underline;">${animal['animal name: '] || ''}</h3>
+                        <h3>${animal['animal name: '] || ''}</h3>
                         <p><strong>Species:</strong> ${animal['animal species: '] || ''}</p>
                         <p><strong>Lifespan:</strong> ${animal['animal lifespan: '] || ''}</p>
                         <p><strong>Trend:</strong> ${animal['animal trend: '] || ''}</p>
