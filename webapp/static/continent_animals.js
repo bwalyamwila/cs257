@@ -66,6 +66,7 @@ function getAllAnimalsInContinent() {
         });
 }
 
+// Get the animal information and display it on the right side of the page
 function getAnimal(animal_name, animal_id) {
         var url = getAPIBaseURL() + '/animals/animal_info/' + animal_name + '/'; 
         

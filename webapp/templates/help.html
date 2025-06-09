@@ -5,104 +5,31 @@
 </head>
 <body>
     <pre>Animals API: endpoint reference
-All responses are in JSON
-
-REQUEST: /
-RESPONSE:
-    A greeting from this API to you.
 
 REQUEST: /help
 RESPONSE:
     This message.
 
-REQUEST: /animals/species/{prefix}
+REQUEST: /
 RESPONSE:
-        Returns a list containing all the animals that contain the prefix (first letter) in their species name.
-        The prefix is not case sensitive. The prefix can be a single letter.
-        Example prefixes:
-            a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z
+    Takes you to the homepage of the website with feature animals.
+    The homepage allows users to search for an animal by name, access the interactive map, 
+    and see which animals can be found in a specific continent.
 
-REQUEST: /animals/status/{status}
+REQUEST: /animal/{animal_name}
 RESPONSE:
-        Returns a list of all the animals that fall under one of the seven population status
-        reults: Least concern (LC), Endangered (EN), Vulnerable (VU), Near Threatened (NT)
-        Not evaluated (NE), Critically endangered (CR), Data deficient (DD).
-        Users must use the abbreviations for when checking the endpoint for each of the statuses
+        Returns the summary information about the animals specified.
+        This page is called when an animal is searched for in the search bar 
+        or when an animal is clicked on in the map page.
 
-        Example:
-
-            /animals/status/LC
-                 
-        Returns a list of all the animals that are Least concern (LC)
-
-REQUEST: /animals/continents/{continent}
+REQUEST: /map
 RESPONSE:
-        Returns a list of all continent specified. The continent name is not case sensitive. 
-        The continent name must be a valid continent name.
+        Takes you to the map page of the website.
+        The map page allows users to click on a country on the map to see the animals found there.
+        They can then click on the animal to see the summary information about the animal.
 
-        Example: 
-        
-            /animals/continents/Africa
-        
-        Returns a list of all the animals that are found in Africa
-
-REQUEST: /animals/countries/{country}
+REQUEST: /continent/{continent_name}
 RESPONSE:
-        Returns a list of all the animals that are found in the country specified.
-        The country name is not case sensitive. The country name must be a valid country name.
-        Example: 
-        
-            /animals/countries/Zambia
-            
-        Returns a list of all the animals that are found in Zambia
-
-REQUEST: /animals/animal_countries/{animals}
-RESPONSE:
-        Returns a list of all the countries that the animal is found in.
-        The animal name is not case sensitive. The animal name must be a valid animal name.
-        Example:
-
-            /animals/animal_countries/Lion
-        
-        Returns a list of all the countries that the animal is found in
-
-REQUEST: /animals/animal_continents/{animals}
-RESPONSE:
-        Returns a list of all the continents that the animal is found in.
-        The animal name is not case sensitive. The animal name must be a valid animal name.
-        Example:
-
-            /animals/animal_continents/Lion
-
-        Returns a list of all the continents that the animal is found in
-
-REQUEST: /animals/trend/{trend}
-RESPONSE:
-        Returns a list of all the animals that are in the trend specified.
-        The trend name is not case sensitive. The trend name must be a valid trend name.
-        All possible trend names:
-            Increasing, Decreasing, Stable, Unknown
-
-        Example:
-        
-            /animals/trend/Increasing
-
-        Returns a list of all the animals that are in the trend Increasing
-
-REQUEST: /animals/animal_info/{prefix}
-RESPONSE:
-        Returns all the information about the animal that contains the prefix (first letter) in their species name.
-        The prefix is not case sensitive. The prefix can be a single letter.
-
-        Example prefixes:
-
-            a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z
-        
-        Returns all the information about the animal that contains the prefix a in their species name
-
-        
-    </pre>
-</body>
-</html>
-
+        Takes the user to a page that lists with links of all the animals found in the continent specified.
+        There is a side bar that when an animal is clicked on, it shows the summary information about the animal.
 

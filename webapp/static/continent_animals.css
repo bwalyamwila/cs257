@@ -1,7 +1,7 @@
 /*
    testing.css
    30 May 2025
-   The CSS for testing.html
+   The CSS for continent_animals.html
 */
 
 a {
@@ -68,7 +68,6 @@ button:hover {
     background-color: #e5f7ca; 
     border-radius: 8px; 
     text-align: left;
-    /* margin-right: 35px; */
     position: fixed;
     top: 155px; 
     right: 135px;
@@ -80,7 +79,7 @@ button:hover {
     width: 400px;
     background-color: #ecdcad; 
     border-radius: 8px; 
-    /* text-align: left ; */
+
     margin-right: 475px;
     
 }
@@ -99,7 +98,7 @@ button:hover {
 }
 
 #animal_list li:hover {
-    color: #FFD700; /* bright yellow */
+    color: #FFD700; 
     transition: color 0.2s;
     cursor: pointer;
 }
@@ -124,7 +123,6 @@ button:hover {
 .info-box-group {
     display: flex;
     flex-direction: column;
-    /*gap: 20px;*/
 }
 
 .info-box{
